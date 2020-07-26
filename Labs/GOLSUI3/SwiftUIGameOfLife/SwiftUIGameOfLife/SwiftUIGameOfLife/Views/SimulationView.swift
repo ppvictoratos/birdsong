@@ -79,8 +79,12 @@ public struct SimulationView: View {
                     self.buttonView(viewStore, title: "Random\nGrid",
                                     action: .resetGridToRandom,
                                     onOff: viewStore.state.isRunningTimer)
-                    self.buttonView(viewStore, title: "", action: .startTimer,
+                    self.buttonView(viewStore, title: "Start\nTimer", action: .startTimer,
                                     onOff: !viewStore.state.isRunningTimer)
+                    self.buttonView(viewStore, title: "Stop\nTimer", action: .stopTimer,
+                                    onOff: viewStore.state.isRunningTimer)
+                    self.buttonView(viewStore, title: "Reset\nTicks", action: .reset,
+                                    onOff: viewStore.state.isRunningTimer)
                 }
                 Spacer()
             }

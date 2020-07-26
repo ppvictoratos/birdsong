@@ -34,6 +34,7 @@ public extension SimulationState {
         case tick
         case startTimer
         case stopTimer
+        case reset
     }
     
     enum Identifiers: Hashable {
@@ -83,6 +84,9 @@ public let simulationReducer = Reducer<SimulationState, SimulationState.Action, 
             case .stopTimer:
                 state.isRunningTimer = false
                 return Effect.cancel(id: SimulationState.Identifiers.simulationCancellable)
+            case .reset:
+                state.gridState.ticks = 0
+                return .none
         }
     }
 )
