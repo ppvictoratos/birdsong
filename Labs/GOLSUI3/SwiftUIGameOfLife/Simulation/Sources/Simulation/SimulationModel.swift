@@ -30,6 +30,8 @@ public extension SimulationState {
         case update(grid: Grid)
         case grid(action: GridState.Action)
         case resetGridToEmpty
+        case resetGridToRandom
+        case tick
     }
     
     enum Identifiers: Hashable {
@@ -64,6 +66,13 @@ public let simulationReducer = Reducer<SimulationState, SimulationState.Action, 
                 return .none
             case .resetGridToEmpty:
                 state.gridState.grid = Grid(10, 10, Grid.Initializers.empty)
+                return .none
+            case .resetGridToRandom: //assuming there is a typo in my version of Problem 4
+                state.gridState.grid = Grid(10, 10, Grid.Initializers.random)
+                return .none
+            case .tick:
+                state.gridState.ticks += 1
+                state.gridState.grid.next
                 return .none
         }
     }

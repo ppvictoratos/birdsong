@@ -76,6 +76,9 @@ public struct SimulationView: View {
                     self.buttonView(viewStore, title: "Place\nHolder", action: .none, onOff: true)
                     self.buttonView(viewStore, title:
                         "Empty\nGrid", action: .resetGridToEmpty, onOff: viewStore.state.isRunningTimer)
+                    self.buttonView(viewStore, title:
+                        "Random\nGrid", action: .resetGridToRandom,
+                            onOff: viewStore.state.isRunningTimer)
                 }
                 Spacer()
             }
