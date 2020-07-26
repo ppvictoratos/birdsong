@@ -32,6 +32,7 @@ public extension SimulationState {
         case resetGridToEmpty
         case resetGridToRandom
         case tick
+        case startTimer
     }
     
     enum Identifiers: Hashable {
@@ -72,7 +73,12 @@ public let simulationReducer = Reducer<SimulationState, SimulationState.Action, 
                 return .none
             case .tick:
                 state.gridState.ticks += 1
-                state.gridState.grid.next
+                state.gridState.grid = state.gridState.grid.next
+                return .none
+            case .startTimer:
+                state.isRunningTimer = true
+                Effect.timer(id: SimulationState.Identifiers.simulationCancellable,
+                                       every: 1, on: env.scheduler)
                 return .none
         }
     }
