@@ -33,6 +33,7 @@ public extension SimulationState {
         case resetGridToRandom
         case tick
         case startTimer
+        case stopTimer
     }
     
     enum Identifiers: Hashable {
@@ -77,9 +78,11 @@ public let simulationReducer = Reducer<SimulationState, SimulationState.Action, 
                 return .none
             case .startTimer:
                 state.isRunningTimer = true
-                Effect.timer(id: SimulationState.Identifiers.simulationCancellable,
-                                       every: 1, on: env.scheduler)
-                return .none
+                return Effect.timer(id: SimulationState.Identifiers.simulationCancellable,
+                every: 1, on: env.scheduler).map { _ in SimulationState.Action.tick }
+            case .stopTimer:
+                state.isRunningTimer = false
+                return Effect.cancel(id: SimulationState.Identifiers.simulationCancellable)
         }
     }
 )
