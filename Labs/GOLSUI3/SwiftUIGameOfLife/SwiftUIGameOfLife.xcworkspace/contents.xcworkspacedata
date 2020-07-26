@@ -17,7 +17,7 @@
       location = "group:Configuration">
    </FileRef>
    <FileRef
-      location = "absolute:/Users/rvs/Development/Projects/HarvardExtension/s65g-20/Assignments/Assignment3/SwiftUIGameOfLife/Statistics">
+      location = "group:Statistics">
    </FileRef>
    <FileRef
       location = "group:SwiftUIGameOfLife/../GameOfLife">

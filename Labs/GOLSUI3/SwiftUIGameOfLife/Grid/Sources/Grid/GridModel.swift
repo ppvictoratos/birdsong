@@ -33,6 +33,7 @@ public extension GridState {
 public let gridReducer = Reducer<GridState, GridState.Action, GridEnvironment> { state, action, env in
     switch action {
     case .step:
+        GridState.Action.step
         return .none
     }
 }
