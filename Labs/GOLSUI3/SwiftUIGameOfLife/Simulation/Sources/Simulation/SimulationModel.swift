@@ -57,8 +57,21 @@ public struct SimulationEnvironment {
     }
 }
 
+//### Problem 13: SimulationModel.swift
+//
+//Equip the `simulationReducer` with an additional pullback reducer which operates on
+//
+//1. SimulationState.gridState
+//2. SimulationState.Action.grid(action:)
+//3. SimulationEnvironment.gridEnvironment
+
 public let simulationReducer = Reducer<SimulationState, SimulationState.Action, SimulationEnvironment>.combine(
-    Reducer<SimulationState, SimulationState.Action, SimulationEnvironment>{ state, action, env in
+//    Reducer<SimulationState, SimulationState.Action, SimulationEnvironment>)pullback(
+//        state: \SimulationState.gridState,
+//        action: /SimulationState.Action.grid(action:),
+//        environment: \.SimulationEnvironment.gridEnvironment
+//    ),
+    Reducer<SimulationState, SimulationState.Action, SimulationEnvironment> { state, action, env in
         switch action {
             case .none:
                 return .none
@@ -89,4 +102,5 @@ public let simulationReducer = Reducer<SimulationState, SimulationState.Action, 
                 return .none
         }
     }
+
 )
