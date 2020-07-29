@@ -29,7 +29,7 @@ public struct ConfigurationsView: View {
                 Spacer()
                 
                 List {
-                    ForEachStore.init(viewStore, content: state.configs, configuration(index:action:  ))
+                    EmptyView()
                 }
                 
                 Spacer()

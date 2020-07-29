@@ -102,24 +102,24 @@ public let configurationsReducer = Reducer<ConfigurationsState, ConfigurationsSt
             state.self.isFetching = true
             state.configs = []
             
-            let dtp = URLSession.DataTaskPublisher(request: URLRequest.init(url: configURL), session: ConfigurationsState.session).mapError {
-                APIError.urlError(configURL, $0)
-            }.tryMap { _ in
-                ConfigurationState.validateHttpResponse(data: Data, response: URLResponse)
-                //decode this JSON to Grid.Configuration
-                
-                //replace any errors from the decoding with an empty array
-                
-                //map decoded values to an action: .setConfigs($0.map(ConfigurationState.init))
-                
-                //make sure to receive all values on the main queue
-                
-                //erase the publisher generate so far to an effect?
-                
-                //return effect as cancellable with id: ConfigurationState.Identifiers.fetchCancellable
-            }.mapError {
-                APIError.urlError(configURL, $0)
-            }
+//            let dtp = URLSession.DataTaskPublisher(request: URLRequest.init(url: configURL), session: ConfigurationsState.session).mapError {
+//                APIError.urlError(configURL, $0)
+//            }.tryMap { _ in
+//                ConfigurationState.validateHttpResponse(data: Data, response: URLResponse)
+//                //decode this JSON to Grid.Configuration
+//                
+//                //replace any errors from the decoding with an empty array
+//                
+//                //map decoded values to an action: .setConfigs($0.map(ConfigurationState.init))
+//                
+//                //make sure to receive all values on the main queue
+//                
+//                //erase the publisher generate so far to an effect?
+//                
+//                //return effect as cancellable with id: ConfigurationState.Identifiers.fetchCancellable
+//            }.mapError {
+//                APIError.urlError(configURL, $0)
+//            }
             return .none
         case .cancelFetch:
             state.self.isFetching = false

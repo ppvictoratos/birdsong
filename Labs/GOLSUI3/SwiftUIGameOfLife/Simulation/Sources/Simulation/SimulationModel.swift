@@ -57,23 +57,26 @@ public struct SimulationEnvironment {
     }
 }
 
-//### Problem 13: SimulationModel.swift
-//
-//Equip the `simulationReducer` with an additional pullback reducer which operates on
-//
-//1. SimulationState.gridState
-//2. SimulationState.Action.grid(action:)
-//3. SimulationEnvironment.gridEnvironment
+                        // this needs to be GlobalState
+public let globalStateReducer = Reducer<SimulationState, SimulationState.Action, SimulationEnvironment> {
+    state, action, env in
+    switch action { default: break }
+}
 
 public let simulationReducer = Reducer<SimulationState, SimulationState.Action, SimulationEnvironment>.combine(
-//    Reducer<SimulationState, SimulationState.Action, SimulationEnvironment>)pullback(
-//        state: \SimulationState.gridState,
-//        action: /SimulationState.Action.grid(action:),
-//        environment: \.SimulationEnvironment.gridEnvironment
-//    ),
+//    globalStateReducer.pullback(state: \SimulationState.gridState,
+//                                action: /SimulationState.Action.grid(action:),
+//                             environment: \.gridEnvironment),
+    
+    //error 1- cannot convert value of type 'WritableKeyPath<SimulationState, GridState>'
+        // to expected argument of type     'WritableKeyPath<GlobalState, GridState>'
+    
+    //error 2- cannot convert value of type 'CasePath<Root, Void>' to
+        // to expected argument of type     'CasePath<GlobalAction, SimulationState.Action>'
+    
     Reducer<SimulationState, SimulationState.Action, SimulationEnvironment> { state, action, env in
         switch action {
-            case .none:
+           case .none:
                 return .none
             case .update(grid: let grid):
                 state.gridState.grid = grid
@@ -93,7 +96,7 @@ public let simulationReducer = Reducer<SimulationState, SimulationState.Action, 
             case .startTimer:
                 state.isRunningTimer = true
                 return Effect.timer(id: SimulationState.Identifiers.simulationCancellable,
-                every: 1, on: env.scheduler).map { _ in SimulationState.Action.tick }
+                every: 1, on: env.scheduler).map { _ in .tick }
             case .stopTimer:
                 state.isRunningTimer = false
                 return Effect.cancel(id: SimulationState.Identifiers.simulationCancellable)
@@ -101,6 +104,7 @@ public let simulationReducer = Reducer<SimulationState, SimulationState.Action, 
                 state.gridState.ticks = 0
                 return .none
         }
-    }
-
+    }.pullback(state: \SimulationState.gridState,
+              action: /SimulationState.Action.grid(action:),
+         environment: \.gridEnvironment)
 )
