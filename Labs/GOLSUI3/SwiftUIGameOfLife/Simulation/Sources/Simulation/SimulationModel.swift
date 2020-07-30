@@ -57,23 +57,25 @@ public struct SimulationEnvironment {
     }
 }
 
-                        // this needs to be GlobalState
-public let globalStateReducer = Reducer<SimulationState, SimulationState.Action, SimulationEnvironment> {
-    state, action, env in
-    switch action { default: break }
-}
+//                        // this needs to be GlobalState
+//public let globalStateReducer = Reducer<SimulationState, SimulationState.Action, SimulationEnvironment> {
+//    state, action, env in
+//    switch action { default: break }
+//}
+//
+//struct GlobalSAE {
+//    var simulationState = SimulationState(gridState: GridState())
+//    var simulationAction = SimulationState.Action.grid(action:)
+//    var simulationEnvironment = SimulationEnvironment.init()
+//}
+
+//1. SimulationState.gridState
+//2. SimulationState.Action.grid(action:)
+//3. SimulationEnvironment.gridEnvironment
+
+//this is higher order functions, pullback transforms an existing reducer function into another kind of reducer function by composing three additional functions with the existing one.
 
 public let simulationReducer = Reducer<SimulationState, SimulationState.Action, SimulationEnvironment>.combine(
-//    globalStateReducer.pullback(state: \SimulationState.gridState,
-//                                action: /SimulationState.Action.grid(action:),
-//                             environment: \.gridEnvironment),
-    
-    //error 1- cannot convert value of type 'WritableKeyPath<SimulationState, GridState>'
-        // to expected argument of type     'WritableKeyPath<GlobalState, GridState>'
-    
-    //error 2- cannot convert value of type 'CasePath<Root, Void>' to
-        // to expected argument of type     'CasePath<GlobalAction, SimulationState.Action>'
-    
     Reducer<SimulationState, SimulationState.Action, SimulationEnvironment> { state, action, env in
         switch action {
            case .none:
@@ -106,5 +108,5 @@ public let simulationReducer = Reducer<SimulationState, SimulationState.Action, 
         }
     }.pullback(state: \SimulationState.gridState,
               action: /SimulationState.Action.grid(action:),
-         environment: \.gridEnvironment)
+              environment: \SimulationEnvironment.gridEnvironment) //i feel like these need to be initialized in order for them to have purpose
 )
