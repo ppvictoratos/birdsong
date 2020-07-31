@@ -104,9 +104,9 @@ public let configurationsReducer = Reducer<ConfigurationsState, ConfigurationsSt
             var dtp = URLSession.DataTaskPublisher(request: URLRequest.init(url: configURL), session: ConfigurationsState.session)
             var dtpMapped = dtp.mapError { APIError.urlError(configURL, $0)}
             var dtpTryMapped = dtpMapped.tryMap { _ in APIError.self }
-            var decoded = dtpTryMapped.decode(type: [Grid.Configuration], decoder: JSONDecoder)
-            decoded.map { .setConfigs($0.map(ConfigurationsState.init))}
-            decoded.mapError { [] }
+//            var decoded = dtpTryMapped.decode(type: [Grid.Configuration], decoder: JSONDecoder)
+//            decoded.map { .setConfigs($0.map(ConfigurationsState.init))}
+//            decoded.mapError { [] }
             //receive all values on the main queue
             //erase the publisher so far to an effect
             //return the effect as a cancellable with id 'ConfigurationsState.Identifiers.fetchCancellablexs

@@ -57,15 +57,8 @@ public struct SimulationEnvironment {
     }
 }
 
-//                        // this needs to be GlobalState
-//public let globalStateReducer = Reducer<SimulationState, SimulationState.Action, SimulationEnvironment> {
-//    state, action, env in
-//    switch action { default: break }
-//}
-//
 //struct GlobalSAE {
-//    var simulationState = SimulationState(gridState: GridState())
-//    var simulationAction = SimulationState.Action.grid(action:)
+//    var simulationState = SimulationState.init()
 //    var simulationEnvironment = SimulationEnvironment.init()
 //}
 
@@ -106,7 +99,19 @@ public let simulationReducer = Reducer<SimulationState, SimulationState.Action, 
                 state.gridState.ticks = 0
                 return .none
         }
-    }.pullback(state: \SimulationState.gridState,
-              action: /SimulationState.Action.grid(action:),
-              environment: \SimulationEnvironment.gridEnvironment) //i feel like these need to be initialized in order for them to have purpose
+    }.pullback(state: <#T##WritableKeyPath<GlobalState, SimulationState>#>, action: <#T##CasePath<GlobalAction, SimulationState.Action>#>, environment: <#T##(GlobalEnvironment) -> SimulationEnvironment#>)
 )
+
+//okay so here's what im thinking about problem 13.. the example that we have in the ApplicatoinModel class is that we created an AppState strcut that holds all of the global states adn the pullback to the bigger appstate was done within its declaration by throwing the other reducers in there. I can create another appstate but i feel like that's overkill.. It is connected to the SimulationState / SimulationEnvironment already but I feel like its not working because it was declared locally and not globally. How does one work around this? These keypaths are not something I jive with.
+//Am I supposed to call onto another class to get the global state (ie: ApplicationModel)? Since this is all in the ApplicationModel I would think not..
+//okay so the pullback definetly goes where I have it.. I dont understand how keypaths work
+
+//WritableKeyPath has a root and a value.. In this case the root is the GlobalState and SimState is the value
+//CasePath has
+
+// \ keypath (works on structs)
+// / case path (works on enums)
+
+//state: WritableKeyPath<GlobalState, SimulationState>
+//action: CasePath<GlobalAction, SimulationState.Action>
+//environment: (GlobalEnvironment) -> SimulationEnvironment
