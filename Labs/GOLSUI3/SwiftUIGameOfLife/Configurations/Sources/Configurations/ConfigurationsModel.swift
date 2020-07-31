@@ -101,9 +101,13 @@ public let configurationsReducer = Reducer<ConfigurationsState, ConfigurationsSt
         case .fetch:
             state.self.isFetching = true
             state.configs = []
-            var dtp = URLSession.DataTaskPublisher(request: URLRequest.init(url: configURL), session: ConfigurationsState.session)
-            var dtpMapped = dtp.mapError { APIError.urlError(configURL, $0)}
-            var dtpTryMapped = dtpMapped.tryMap { _ in APIError.self }
+            let task = URLSession.DataTaskPublisher(request: URLRequest.init(url: configURL),
+                                                    session: ConfigurationsState.session).mapError { APIError.urlError(configURL, $0)}.tryMap { _ in ConfigurationsState.validateHttpResponse(data: <#T##Data#>, response: <#T##URLResponse#>)}
+            
+//            let task = URLSession.DataTaskPublisher(request: URLRequest.init(url: configURL), session: ConfigurationsState.session) { data, response, error in }
+            
+            //is a guard statement needed?
+            
 //            var decoded = dtpTryMapped.decode(type: [Grid.Configuration], decoder: JSONDecoder)
 //            decoded.map { .setConfigs($0.map(ConfigurationsState.init))}
 //            decoded.mapError { [] }
