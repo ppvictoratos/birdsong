@@ -29,13 +29,17 @@ public struct ConfigurationsView: View {
                 Spacer()
                 
                 List {
-                    EmptyView()
+                    ForEachStore(self.store.scope(
+                                    state: \.configs,
+                                    action: ConfigurationsState.Action.configuration(index:action:)
+                    ), content: ConfigurationView.init(store:))
                 }
                 
                 Spacer()
                 HStack {
                     Spacer()
                     Button(action: {
+                        viewStore.send(ConfigurationsState.Action.fetch)
                     }) {
                         Text("Fetch").font(.system(size: 24.0))
                     }
@@ -44,6 +48,7 @@ public struct ConfigurationsView: View {
                     Spacer()
                     
                     Button(action: {
+                        viewStore.send(ConfigurationsState.Action.clear)
                     }) {
                         Text("Clear").font(.system(size: 24.0))
                     }

@@ -64,6 +64,10 @@ struct ContentView: View {
                 action: AppState.Action.statisticsAction(action:)
             )
         )
+        .tabItem {
+            Image(systemName: "eyeglasses")
+            Text("Statistics")
+        }
     }
 }
 
