@@ -101,20 +101,18 @@ public let configurationsReducer = Reducer<ConfigurationsState, ConfigurationsSt
         case .fetch:
             state.self.isFetching = true
             state.configs = []
-            let task = URLSession.DataTaskPublisher(request: URLRequest.init(url: configURL),
-                                                    session: ConfigurationsState.session).mapError { APIError.urlError(configURL, $0)}.tryMap { _ in ConfigurationsState.validateHttpResponse(data: <#T##Data#>, response: <#T##URLResponse#>)}
-            
-//            let task = URLSession.DataTaskPublisher(request: URLRequest.init(url: configURL), session: ConfigurationsState.session) { data, response, error in }
-            
-            //is a guard statement needed?
-            
-//            var decoded = dtpTryMapped.decode(type: [Grid.Configuration], decoder: JSONDecoder)
-//            decoded.map { .setConfigs($0.map(ConfigurationsState.init))}
-//            decoded.mapError { [] }
-            //receive all values on the main queue
-            //erase the publisher so far to an effect
-            //return the effect as a cancellable with id 'ConfigurationsState.Identifiers.fetchCancellablexs
-            return .none
+            return URLSession
+                .DataTaskPublisher(request: URLRequest.init(url: configURL),
+                                   session: ConfigurationsState.session)
+                .mapError { APIError.urlError(configURL, $0) }
+                .tryMap (ConfigurationsState.validateHttpResponse) //wtf ()? y no closure
+                .mapError { $0 as! APIError } //error i get from line 108 it will now be represented AS an APIError
+                .decode(type: [Grid.Configuration].self, decoder: JSONDecoder()) //why .self?
+                .replaceError(with: [])
+                .map { .setConfigs($0.map(ConfigurationState.init)) }
+                .receive(on: DispatchQueue.main)
+                .eraseToEffect()
+                .cancellable(id: ConfigurationsState.Identifiers.fetchCancellable)
         case .cancelFetch:
             state.self.isFetching = false
             return Effect.cancel(id: ConfigurationsState.Identifiers.fetchCancellable)
