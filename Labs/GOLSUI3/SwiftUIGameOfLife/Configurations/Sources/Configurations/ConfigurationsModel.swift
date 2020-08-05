@@ -11,6 +11,7 @@ import Combine
 import Dispatch
 import GameOfLife
 import Configuration
+import FunctionalProgramming
 
 // MARK: API Support
 private let configURL = URL(string: "https://www.dropbox.com/s/i4gp5ih4tfq3bve/S65g.json?dl=1")!
@@ -20,6 +21,9 @@ enum APIError: Error {
     case badResponse(URL, URLResponse)
     case badResponseStatus(URL, HTTPURLResponse)
     case jsonDecodingError(URL, Error, String)
+//    var simpleUrlError: (URLError) -> APIError {
+//        [curry(APIError.urlError)]
+//    }
 }
 
 class DefaultHandlingSessionDelegate: NSObject, URLSessionDelegate {
@@ -105,8 +109,8 @@ public let configurationsReducer = Reducer<ConfigurationsState, ConfigurationsSt
                 .DataTaskPublisher(request: URLRequest.init(url: configURL),
                                    session: ConfigurationsState.session)
                 .mapError { APIError.urlError(configURL, $0) }
-                .tryMap (ConfigurationsState.validateHttpResponse) //wtf ()? y no closure
-                .mapError { $0 as! APIError } //error i get from line 108 it will now be represented AS an APIError
+                .tryMap (ConfigurationsState.validateHttpResponse) //no { } bc validateHttpResponse is the signature we need
+                .mapError { $0 as! APIError }
                 .decode(type: [Grid.Configuration].self, decoder: JSONDecoder()) //why .self?
                 .replaceError(with: [])
                 .map { .setConfigs($0.map(ConfigurationState.init)) }
