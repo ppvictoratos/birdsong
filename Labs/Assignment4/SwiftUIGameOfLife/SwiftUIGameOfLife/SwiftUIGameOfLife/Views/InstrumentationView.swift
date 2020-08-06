@@ -68,7 +68,10 @@ struct InstrumentationView: View {
         WithViewStore(store) { viewStore in
             HStack {
                 // Your Problem 6 code replaces the following line
-                EmptyView()
+                //need to go deeper into the viewstore?
+                Text(verbatim: "Size \(viewStore)").font(.title).fontWeight(.black).foregroundColor(Color("accent"))
+                Spacer()
+                Text(verbatim: "Depth").font(.title).fontWeight(.black).foregroundColor(Color("accent"))
             }
         }
     }
@@ -77,7 +80,12 @@ struct InstrumentationView: View {
         WithViewStore(store) { viewStore in
             HStack {
                 // Your Problem 7 code replaces the following line
-                EmptyView()
+                Slider() //obtain value from a viewStore binding with get of the # of rows ni the grid and set of the setGridSize action
+                                        //slide over 5 - 40, step size 1
+                        //void for onEditingChange
+                        //min Val label 5, max val label 40
+                Spacer()
+                Text(verbatim: /(self.cycleLength(for:)))
             }
         }
     }
