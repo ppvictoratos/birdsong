@@ -438,14 +438,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIGameOfLife/Preview Content\"";
-				DEVELOPMENT_TEAM = 49D8NY9JB9;
+				DEVELOPMENT_TEAM = 5R6CF59GRY;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUIGameOfLife/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.astrazeneca.SwiftUIGameOfLife;
+				PRODUCT_BUNDLE_IDENTIFIER = com.loveshakk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -458,14 +458,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIGameOfLife/Preview Content\"";
-				DEVELOPMENT_TEAM = 49D8NY9JB9;
+				DEVELOPMENT_TEAM = 5R6CF59GRY;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUIGameOfLife/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.astrazeneca.SwiftUIGameOfLife;
+				PRODUCT_BUNDLE_IDENTIFIER = com.loveshakk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

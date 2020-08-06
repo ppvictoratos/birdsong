@@ -29,7 +29,7 @@ struct ContentView: View {
                     .tag(AppState.Tab.statistics)
             }
             // You Problem 4 code goes here
-            
+                .accentColor(Color("accent"))
         }
     }
 
@@ -42,7 +42,7 @@ struct ContentView: View {
         )
         .tabItem {
             // You Problem 5.1 code goes here
-            Image(systemName: "hand.thumbsup")
+            Image(systemName: "gamecontroller")
             Text("Simulation")
         }
     }
@@ -56,7 +56,7 @@ struct ContentView: View {
         )
         .tabItem {
             // You Problem 5.2 code goes here
-            Image(systemName: "hand.thumbsup")
+            Image(systemName: "timelapse")
             Text("Configuration")
         }
     }
@@ -70,7 +70,7 @@ struct ContentView: View {
         )
        .tabItem {
             // You Problem 5.3 code goes here
-            Image(systemName: "hand.thumbsup")
+            Image(systemName: "chart.bar")
             Text("Statistics")
         }
     }
