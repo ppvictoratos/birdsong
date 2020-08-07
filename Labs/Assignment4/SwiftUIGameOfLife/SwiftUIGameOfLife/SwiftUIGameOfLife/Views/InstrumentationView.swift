@@ -94,7 +94,11 @@ struct InstrumentationView: View {
         WithViewStore(store) { viewStore in
             HStack {
                 // Your Problem 8 code replaces the following line
-                EmptyView()
+                Text(verbatim: "Refresh Period \(viewStore.timerInterval)")
+                    .font(.title).fontWeight(.black).foregroundColor(Color("accent"))
+                Spacer()
+                Text(verbatim: "Simulation").font(.title).fontWeight(.black)
+                    .foregroundColor(Color(.red)) //if timer is running
             }
         }
     }
@@ -103,7 +107,9 @@ struct InstrumentationView: View {
         WithViewStore(store) { viewStore in
             HStack {
                 // Your Problem 9 code replaces the following line
-                EmptyView()
+                Slider()
+                Spacer()
+                Toggle(<#T##configuration: ToggleStyleConfiguration##ToggleStyleConfiguration#>)
             }
         }
     }
