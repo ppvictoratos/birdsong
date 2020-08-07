@@ -69,9 +69,15 @@ struct InstrumentationView: View {
             HStack {
                 // Your Problem 6 code replaces the following line
                 //need to go deeper into the viewstore?
-                Text(verbatim: "Size \(viewStore)").font(.title).fontWeight(.black).foregroundColor(Color("accent"))
+                Text(verbatim: "Size \(viewStore.gridState.grid.size.rows)")
+                    .font(.title)
+                    .fontWeight(.black)
+                    .foregroundColor(Color("accent"))
                 Spacer()
-                Text(verbatim: "Depth").font(.title).fontWeight(.black).foregroundColor(Color("accent"))
+                Text(verbatim: "Depth")
+                    .font(.title)
+                    .fontWeight(.black)
+                    .foregroundColor(Color("accent"))
             }
         }
     }
@@ -95,9 +101,13 @@ struct InstrumentationView: View {
             HStack {
                 // Your Problem 8 code replaces the following line
                 Text(verbatim: "Refresh Period \(viewStore.timerInterval)")
-                    .font(.title).fontWeight(.black).foregroundColor(Color("accent"))
+                    .font(.title)
+                    .fontWeight(.black)
+                    .foregroundColor(Color("accent"))
                 Spacer()
-                Text(verbatim: "Simulation").font(.title).fontWeight(.black)
+                Text(verbatim: "Simulation")
+                    .font(.title)
+                    .fontWeight(.black)
                     .foregroundColor(Color(.red)) //if timer is running
             }
         }

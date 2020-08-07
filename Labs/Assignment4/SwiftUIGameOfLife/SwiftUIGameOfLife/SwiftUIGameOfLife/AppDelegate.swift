@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         // Your Problem 3 code goes here.
-        //i really dont know what to do here, 0 context.
+        UISwitch.appearance().tintColor = UIColor(named: "accent")
         return true
     }
 
