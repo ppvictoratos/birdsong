@@ -69,15 +69,19 @@ struct InstrumentationView: View {
             HStack {
                 // Your Problem 6 code replaces the following line
                 //need to go deeper into the viewstore?
-                Text(verbatim: "Size \(viewStore.gridState.grid.size.rows)")
-                    .font(.title)
-                    .fontWeight(.black)
+                Text("Size \(Int(viewStore.gridState.grid.size.rows))")
+                    .font(.system(.subheadline, design: .rounded))
+                    .bold()
                     .foregroundColor(Color("accent"))
+                    .frame(width: width * 0.65, alignment: .bottomLeading)
+                    .padding(0.0)
                 Spacer()
-                Text(verbatim: "Depth")
-                    .font(.title)
-                    .fontWeight(.black)
+                Text("Depth")
+                    .font(.system(.subheadline, design: .rounded))
+                    .bold()
                     .foregroundColor(Color("accent"))
+                    .frame(width: width * 0.25, alignment: .bottomTrailing)
+                    .padding(0.0)
             }
         }
     }
@@ -86,12 +90,35 @@ struct InstrumentationView: View {
         WithViewStore(store) { viewStore in
             HStack {
                 // Your Problem 7 code replaces the following line
-                Slider() //obtain value from a viewStore binding with get of the # of rows ni the grid and set of the setGridSize action
-                                        //slide over 5 - 40, step size 1
-                        //void for onEditingChange
-                        //min Val label 5, max val label 40
+                Slider(
+                    value: viewStore.binding(
+                        get: { Double($0.gridState.grid.size.rows) },
+                        send: { .setGridSize(Int($0)) }
+                ),
+                       in: 5 ... 40,
+                       step: 1,
+                       onEditingChanged: { (changed) in },
+                       minimumValueLabel: Text("5").font(.system(.subheadline, design: .rounded))
+                        .foregroundColor(Color("accent")),
+                       maximumValueLabel: Text("40").font(.system(.subheadline, design: .rounded))
+                        .foregroundColor(Color("accent")),
+                       label: { Spacer() }
+                )
+                    .frame(width: width * 0.65, alignment: .bottomLeading)
+                    .accentColor(Color("accent"))
+                
                 Spacer()
-                Text(verbatim: /(self.cycleLength(for:)))
+                
+                Text(self.cycleLength(for: viewStore))
+                    .font(.system(.subheadline, design: .rounded))
+                    .foregroundColor(Color("accent"))
+                    .frame(width: width * 0.25, alignment: .trailing)
+                    .fixedSize(horizontal: true, vertical: false)
+                .background(
+                    Color("textbackground")
+                        .frame(width: width * 0.25, height: 31.0, alignment: .leading)
+                        .fixedSize(horizontal: true, vertical: true)
+                )
             }
         }
     }
@@ -100,15 +127,22 @@ struct InstrumentationView: View {
         WithViewStore(store) { viewStore in
             HStack {
                 // Your Problem 8 code replaces the following line
-                Text(verbatim: "Refresh Period \(viewStore.timerInterval)")
-                    .font(.title)
-                    .fontWeight(.black)
+                Text("Refresh Period \(self.numberString(for: viewStore.timerInterval))")
+                    .font(.system(.subheadline, design: .rounded))
+                    .bold()
                     .foregroundColor(Color("accent"))
+                    .frame(width: width * 0.55, alignment: .bottomLeading)
+                    .offset(x: 0.0)
+                    .padding(0.0)
+                
                 Spacer()
-                Text(verbatim: "Simulation")
-                    .font(.title)
-                    .fontWeight(.black)
-                    .foregroundColor(Color(.red)) //if timer is running
+                
+                Text("Simulation")
+                    .font(.system(.subheadline, design: .rounded))
+                    .bold()
+                    .frame(width: width * 0.45, alignment: .bottomTrailing)
+                    .padding()
+                    .foregroundColor(viewStore.isRunningTimer ? .red : Color("accent"))
             }
         }
     }
@@ -117,9 +151,36 @@ struct InstrumentationView: View {
         WithViewStore(store) { viewStore in
             HStack {
                 // Your Problem 9 code replaces the following line
-                Slider()
+                Slider(
+                    value: viewStore.binding(
+                        get: \.timerInterval,
+                        send: { .setTimerInterval($0) }
+                ),
+                    in: 0.0 ... 1.0,
+                    step: 0.1,
+                    onEditingChanged: { (changed) in },
+                    minimumValueLabel: Text("0.0")
+                        .font(.system(.subheadline, design: .rounded))
+                        .foregroundColor(Color("accent")),
+                    maximumValueLabel: Text("1.0")
+                        .font(.system(.subheadline, design: .rounded))
+                        .foregroundColor(Color("accent")),
+                    label: { Spacer() }
+                )
+                    .frame(width: width * 0.65, alignment: .bottomLeading)
+                    .accentColor(Color("accent"))
+                
                 Spacer()
-                Toggle(<#T##configuration: ToggleStyleConfiguration##ToggleStyleConfiguration#>)
+                
+                Toggle(isOn:
+                    viewStore.binding(
+                        get: \.isRunningTimer,
+                        send: { .toggleTimer($0) }
+                )
+                ) {
+                    EmptyView()
+                }
+                .frame(width: width * 0.25, alignment: .bottomTrailing)
             }
         }
     }
@@ -128,7 +189,13 @@ struct InstrumentationView: View {
         WithViewStore(store) { viewStore in
             HStack {
                 // Your Problem 10 code replaces the following line
-                EmptyView()
+                Spacer()
+                ThemedButton(text: "Step") { viewStore.send(.stepGrid) }
+                Spacer()
+                ThemedButton(text: "Empty") { viewStore.send(.resetGridToEmpty) }
+                Spacer()
+                ThemedButton(text: "Random") { viewStore.send(.resetGridToRandom) }
+                Spacer()
             }
         }
     }
