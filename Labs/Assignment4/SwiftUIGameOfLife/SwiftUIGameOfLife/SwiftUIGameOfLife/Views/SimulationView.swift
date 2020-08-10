@@ -69,7 +69,18 @@ public struct SimulationView: View {
     ) -> some View {
         HStack {
             // Your Problem 20 Code goes here
-            EmptyView()
+            Spacer()
+            InstrumentationView(store: self.store)
+            Spacer()
+            Divider()
+            GridView(
+                store: self.store.scope(
+                    state: \.gridState,
+                    action: SimulationState.Action.grid(action:)
+                )
+            )
+            .frame(width: g.size.height)
+            Spacer()
         }
     }
 }

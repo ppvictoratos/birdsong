@@ -12,6 +12,7 @@ import GameOfLife
 
 public struct GridView: View {
     let store: Store<GridState, GridState.Action>
+    @ObservedObject var viewStore: ViewStore<GridState, GridState.Action>
     let configuration: Configuration
     @State private var lastPosition: Grid.Offset? = .none
 
@@ -20,6 +21,7 @@ public struct GridView: View {
         configuration: Configuration = Configuration()
     ) {
         self.store = store
+        self.viewStore = ViewStore(store, removeDuplicates: ==)
         self.configuration = configuration
     }
 
@@ -37,27 +39,31 @@ public struct GridView: View {
     ) -> some View {
         return Path { p in
             // Your problem 12 code goes here
-
+            guard self.cellWidth(for: viewStore, g: g) > 5.0 else { return }
             // Your problem 13 code replaces the code below
-            p.move(to: CGPoint(
-                x: g.frame(in: .local).origin.x,
-                y: g.frame(in: .local).origin.y
-            ))
-            p.addLine(to: CGPoint(
-                x: g.frame(in: .local).origin.x + g.frame(in: .local).size.width,
-                y: g.frame(in: .local).origin.y + g.frame(in: .local).size.height
-            ))
-            p.move(to: CGPoint(
-                x: g.frame(in: .local).origin.x + g.frame(in: .local).size.width,
-                y: g.frame(in: .local).origin.y
-            ))
-            p.addLine(to: CGPoint(
-                x: g.frame(in: .local).origin.x,
-                y: g.frame(in: .local).origin.y + g.frame(in: .local).size.height
-            ))
+            (0 ... viewStore.grid.size.cols).forEach { i in
+                p.move(to: CGPoint(
+                    x: g.frame(in: .local).origin.x + self.cellWidth(for: viewStore, g: g) * CGFloat(i),
+                    y: g.frame(in: .local).origin.y
+                ))
+                p.addLine(to: CGPoint(
+                    x: g.frame(in: .local).origin.x + self.cellWidth(for: viewStore, g: g) * CGFloat(i),
+                    y: g.frame(in: .local).origin.y + g.frame(in: .local).size.height
+                ))
+            }
+            (0 ... viewStore.grid.size.rows).forEach { i in
+                p.move(to: CGPoint(
+                    x: g.frame(in: .local).origin.x - self.configuration.lineWidth/CGFloat(2.0),
+                    y: g.frame(in: .local).origin.y + self.cellHeight(for: viewStore, g: g) * CGFloat(i)
+                ))
+                p.addLine(to: CGPoint(
+                    x: g.frame(in: .local).origin.x + g.frame(in: .local).size.width + self.configuration.lineWidth/CGFloat(2.0),
+                    y: g.frame(in: .local).origin.y + self.cellHeight(for: viewStore, g: g) * CGFloat(i)
+                ))
+            }
         }
         // Your problem 14 code replaces the code below
-        .stroke(Color.black, lineWidth: 8.0)
+            .stroke(Color("gridLine"), lineWidth: self.configuration.lineWidth)
     }
 
     func cells(
@@ -65,7 +71,15 @@ public struct GridView: View {
         g: GeometryProxy
     ) -> some View {
         // Your Problem 15 code goes here.
-        EmptyView()
+        ForEach (viewStore.grid.allOffsets, id: \.self) {
+            viewStore.grid[$0.row][$0.col] == .empty ? nil :
+            Cell(offset: $0,
+                 gridSize: viewStore.grid.size,
+                 configuration: self.configuration,
+                 gridRect: g.frame(in: .local),
+                 cellState: viewStore.grid[$0.row][$0.col]
+            )
+        }
         .frame(
             width: g.size.width,
             height: g.size.height,
@@ -110,6 +124,8 @@ public struct GridView: View {
                     GeometryReader { g in
                         self.lines(for: viewStore, g: g)
                         // Your Problem 16 code goes here
+                            .background(Color("gridBackground"))
+                            .gesture(self.touchHandler(for: viewStore, geometry: g))
                         self.cells(for: viewStore, g: g)
                             .offset(
                                 x: self.cellWidthOffset(for: viewStore, g: g),
@@ -137,11 +153,11 @@ extension GridView {
             .onChanged { value in
                 let viewStore = viewStore
                 // Your Problem 17 code changes the next line
-                guard let touchedCell = Grid.Offset(row: 0, col: 0) as Grid.Offset?,
+                guard let touchedCell = self.convert(value.location, viewStore: viewStore, geometry: g),
                     touchedCell.row != self.lastPosition?.row || touchedCell.col != self.lastPosition?.col
                     else { return }
                 // Your Problem 18 code replaces the next line.
-                viewStore.send(.none)
+                self.viewStore.send(.toggle(touchedCell.row, touchedCell.col))
                 self.lastPosition = touchedCell
             }
             .onEnded { _ in
@@ -165,7 +181,10 @@ extension GridView {
         let pos = Grid.Offset(row: Int(row), col: Int(col))
 
         // Your Problem 19 code goes here
-
+        guard pos.row >= 0 && pos.row < viewStore.grid.size.rows
+            && pos.col >= 0 && pos.col < viewStore.grid.size.cols
+            else { return .none }
+        
         return pos
     }
 }

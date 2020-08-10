@@ -22,7 +22,13 @@ struct ThemedButton: View {
                     Text(text)
                         .font(.system(size: 13.0))
                         .frame(minWidth: 72.0, minHeight: 44.0)
+                        .foregroundColor(.white)
+                    
                 }
+                .background(Color("accent"))
+                .overlay(Rectangle()
+                .stroke(Color.white, lineWidth: 2.0))
+                .shadow(radius: 2.0)
                 .frame(width: 72.0, height: 44.0)
             }
             Spacer()
