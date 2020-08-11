@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             Image("userImage").clipShape(Circle()).shadow(radius: 10).overlay(Circle().stroke(Color.red, lineWidth: 5)).scaleEffect(0.3, anchor: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            FollowPath()
+            SongCircle().scaleEffect(0.7)
         }
     }
 }
@@ -27,18 +27,32 @@ struct ContentView_Previews: PreviewProvider {
 struct SongCircle: View {
     var body: some View {
         VStack {
-            Circle().scaleEffect(0.3, anchor: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).foregroundColor(.black)
+            Circle().scaleEffect(0.3, anchor: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .foregroundColor(.black)
+                .offset(x:0, y: 20)
             HStack {
-                Circle().scaleEffect(0.3)
-                Circle().scaleEffect(0.3)
+                Circle()
+                    .scaleEffect(0.3)
+                    .offset(x: 20, y: -30)
+                Circle()
+                    .scaleEffect(0.3)
+                    .offset(x: -15, y: -30)
             }
             HStack {
-                Circle().scaleEffect(0.3)
-                Circle().scaleEffect(0.3)
+                Circle()
+                    .scaleEffect(0.3)
+                    .offset(x: 20, y: -20)
+                Circle()
+                    .scaleEffect(0.3)
+                    .offset(x: -20, y: -20)
             }
             HStack {
-                Circle().scaleEffect(0.3)
-                Circle().scaleEffect(0.3)
+                Circle()
+                    .scaleEffect(0.3)
+                    .offset(x: 90, y: -50)
+                Circle()
+                    .scaleEffect(0.3)
+                    .offset(x: -90, y: -50)
             }
         }
     }
@@ -51,10 +65,8 @@ struct FollowPath: View {
     var body: some View {
         GeometryReader { proxy in
             ZStack(alignment: .topLeading) {
-                Circle().stroke(Color.clear).frame(width: 25, height: 25, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                
                 SongCircle().frame(width: 25, height: 25).offset(x: 0, y: 0)
-                    .modifier(FollowEffect(pct: self.flag ? 1 : 0, path: CirclePath.create(in: CGRect(x: 0, y: 0, width: 0, height: 0))))
+                    .modifier(FollowEffect(pct: self.flag ? 1 : 0, path: CirclePath.create(in: CGRect(x: 0, y: 0, width: 25, height: 25))))
             }
         }
     }
@@ -101,6 +113,7 @@ struct FollowEffect: GeometryEffect {
 }
 
 struct CirclePath: Shape {
+    
     func path(in rect: CGRect) -> Path {
         return CirclePath.create(in: rect)
     }
