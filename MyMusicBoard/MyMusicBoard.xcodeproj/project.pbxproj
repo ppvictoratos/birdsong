@@ -45,6 +45,7 @@
 		F6185C0124DCE2E20057410D /* MyMusicBoardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyMusicBoardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6185C0524DCE2E20057410D /* MyMusicBoardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMusicBoardUITests.swift; sourceTree = "<group>"; };
 		F6185C0724DCE2E20057410D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F62CB8EF24E5E4D90077F274 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +98,7 @@
 			children = (
 				F6185BE824DCE2E10057410D /* MyMusicBoardApp.swift */,
 				F6185BEA24DCE2E10057410D /* ContentView.swift */,
+				F62CB8EF24E5E4D90077F274 /* README.md */,
 				F6185BEC24DCE2E20057410D /* Assets.xcassets */,
 				F6185BF124DCE2E20057410D /* Info.plist */,
 				F6185BEE24DCE2E20057410D /* Preview Content */,
