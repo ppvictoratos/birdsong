@@ -20,7 +20,6 @@ struct ContentView: View {
                 VStack {
                     Spacer()
                     HStack {
-                        Spacer()
                         ZStack{
                             Image("shneaky")
                                 .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
