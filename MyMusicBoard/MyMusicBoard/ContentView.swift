@@ -71,8 +71,9 @@ struct ContentView: View {
     
     func initialPosition(boundingBox g: GeometryProxy) -> CGSize {
         CGSize(
-            width: g.size.width * ContentView.fourFifths / 2.0
-                - g.size.width * ContentView.fourFifths / 20.0,
+            width: g.size.width * CGFloat(0.8) / 2.0
+                - g.size.width * CGFloat(0.8) / 20.0,
+            //why is this g.size.width?
             height: 0.0
         )
     }
@@ -81,10 +82,11 @@ struct ContentView: View {
         let pos = initialPosition(boundingBox: g)
         
         return CGSize(
-            width: pos.width - 4.0 + (cos(CGFloat(i) * ContentView.tau
-                                        / CGFloat(ContentView.numCircles)) * g.size.width * 0.45),
-            height: pos.width + 75.0 + (sin(CGFloat(i) * ContentView.tau
-                                        / CGFloat(ContentView.numCircles)) * g.size.width * 0.45)
+            //cos of numCircles * (2Pi / numCircles)
+            width: pos.width - 4.0 +
+                (cos(CGFloat(i) * ContentView.tau / CGFloat(ContentView.numCircles)) * g.size.width * 0.45),
+            height: pos.width + 75.0 +
+                (sin(CGFloat(i) * ContentView.tau / CGFloat(ContentView.numCircles)) * g.size.width * 0.45)
         )
     }
 }
@@ -92,7 +94,7 @@ struct ContentView: View {
 struct MediaPlayoutMenu: View {
     @State private var volume: Double = 0
     
-    var body: some View { //might need to create a custom button  here
+    var body: some View {
             Spacer()
             HStack{
                 Spacer()
@@ -106,7 +108,6 @@ struct MediaPlayoutMenu: View {
                 .font(.largeTitle)
                 .foregroundColor(.white)
                 .background(Color.green)
-    
     }
 }
 
