@@ -151,7 +151,6 @@ extension GridView {
     ) -> some Gesture {
         DragGesture(minimumDistance: 0, coordinateSpace: .local)
             .onChanged { value in
-                let viewStore = viewStore
                 // Your Problem 17 code changes the next line
                 guard let touchedCell = self.convert(value.location, viewStore: viewStore, geometry: g),
                     touchedCell.row != self.lastPosition?.row || touchedCell.col != self.lastPosition?.col
