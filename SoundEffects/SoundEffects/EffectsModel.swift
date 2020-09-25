@@ -6,3 +6,17 @@
 //
 
 import Foundation
+import CoreAudioKit
+
+class EffectsModel {
+    // Make an audio gain function.
+    var au = AudioUnit(bitPattern: 0)
+}
+
+
+// eventually audio HAL
+ 
+// (remove noise, record, store music)
+
+
+// convert/grab your recordings.
