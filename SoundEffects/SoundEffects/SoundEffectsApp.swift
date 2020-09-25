@@ -15,3 +15,14 @@ struct SoundEffectsApp: App {
         }
     }
 }
+
+struct SoundEffectsApp_Previews: PreviewProvider {
+    static var previews: some View {
+        ZStack {
+            /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/.background(Color.init("MainColor"))
+            Rectangle().background( Color.init("MainColor"))
+        }
+
+        
+    }
+}
