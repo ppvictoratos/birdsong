@@ -13,8 +13,7 @@ class EffectsModel {
     
     // Create a soundwave function?
     
-    
-    
+    //
     
     // Make an audio gain function.
     var au = AudioUnit(bitPattern: 0)
