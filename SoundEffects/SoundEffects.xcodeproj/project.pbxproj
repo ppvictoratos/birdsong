@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F615CB3D25241ACA00E29F33 /* Outskirt Stand.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F615CB3C25241ACA00E29F33 /* Outskirt Stand.mp3 */; };
+		F615CB4C2524314D00E29F33 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F615CB4B2524314D00E29F33 /* ComposableArchitecture */; };
+		F615CB52252431C000E29F33 /* AudioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F615CB51252431C000E29F33 /* AudioModel.swift */; };
+		F621F2BF2522D38700966E53 /* NOT MINE.swift in Sources */ = {isa = PBXBuildFile; fileRef = F621F2BE2522D38700966E53 /* NOT MINE.swift */; };
 		F634DA65251C28B200FA2D86 /* SoundEffectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F634DA64251C28B200FA2D86 /* SoundEffectsApp.swift */; };
 		F634DA67251C28B200FA2D86 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F634DA66251C28B200FA2D86 /* ContentView.swift */; };
 		F634DA69251C28B300FA2D86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F634DA68251C28B300FA2D86 /* Assets.xcassets */; };
@@ -14,7 +18,6 @@
 		F634DA77251C28B400FA2D86 /* SoundEffectsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F634DA76251C28B400FA2D86 /* SoundEffectsTests.swift */; };
 		F634DA82251C28B400FA2D86 /* SoundEffectsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F634DA81251C28B400FA2D86 /* SoundEffectsUITests.swift */; };
 		F634DA90251C29BA00FA2D86 /* EffectsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F634DA8F251C29BA00FA2D86 /* EffectsModel.swift */; };
-		F6FE7C6925213CF000E4B982 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F6FE7C6825213CF000E4B982 /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F615CB3C25241ACA00E29F33 /* Outskirt Stand.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Outskirt Stand.mp3"; sourceTree = "<group>"; };
+		F615CB51252431C000E29F33 /* AudioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioModel.swift; sourceTree = "<group>"; };
+		F621F2BE2522D38700966E53 /* NOT MINE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NOT MINE.swift"; sourceTree = "<group>"; };
 		F634DA61251C28B200FA2D86 /* SoundEffects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundEffects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F634DA64251C28B200FA2D86 /* SoundEffectsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectsApp.swift; sourceTree = "<group>"; };
 		F634DA66251C28B200FA2D86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6FE7C6925213CF000E4B982 /* ComposableArchitecture in Frameworks */,
+				F615CB4C2524314D00E29F33 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,9 +82,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F615CB3B252419A600E29F33 /* AudioSamples */ = {
+			isa = PBXGroup;
+			children = (
+				F615CB3C25241ACA00E29F33 /* Outskirt Stand.mp3 */,
+			);
+			path = AudioSamples;
+			sourceTree = "<group>";
+		};
 		F634DA58251C28B200FA2D86 = {
 			isa = PBXGroup;
 			children = (
+				F615CB3B252419A600E29F33 /* AudioSamples */,
 				F634DA63251C28B200FA2D86 /* SoundEffects */,
 				F634DA75251C28B400FA2D86 /* SoundEffectsTests */,
 				F634DA80251C28B400FA2D86 /* SoundEffectsUITests */,
@@ -101,6 +116,8 @@
 			children = (
 				F634DA64251C28B200FA2D86 /* SoundEffectsApp.swift */,
 				F634DA66251C28B200FA2D86 /* ContentView.swift */,
+				F621F2BE2522D38700966E53 /* NOT MINE.swift */,
+				F615CB51252431C000E29F33 /* AudioModel.swift */,
 				F634DA8F251C29BA00FA2D86 /* EffectsModel.swift */,
 				F634DA68251C28B300FA2D86 /* Assets.xcassets */,
 				F634DA6D251C28B300FA2D86 /* Info.plist */,
@@ -152,7 +169,7 @@
 			);
 			name = SoundEffects;
 			packageProductDependencies = (
-				F6FE7C6825213CF000E4B982 /* ComposableArchitecture */,
+				F615CB4B2524314D00E29F33 /* ComposableArchitecture */,
 			);
 			productName = SoundEffects;
 			productReference = F634DA61251C28B200FA2D86 /* SoundEffects.app */;
@@ -226,7 +243,7 @@
 			);
 			mainGroup = F634DA58251C28B200FA2D86;
 			packageReferences = (
-				F6FE7C6725213CF000E4B982 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				F615CB4A2524314D00E29F33 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = F634DA62251C28B200FA2D86 /* Products */;
 			projectDirPath = "";
@@ -245,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F634DA6C251C28B300FA2D86 /* Preview Assets.xcassets in Resources */,
+				F615CB3D25241ACA00E29F33 /* Outskirt Stand.mp3 in Resources */,
 				F634DA69251C28B300FA2D86 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,6 +291,8 @@
 				F634DA90251C29BA00FA2D86 /* EffectsModel.swift in Sources */,
 				F634DA67251C28B200FA2D86 /* ContentView.swift in Sources */,
 				F634DA65251C28B200FA2D86 /* SoundEffectsApp.swift in Sources */,
+				F621F2BF2522D38700966E53 /* NOT MINE.swift in Sources */,
+				F615CB52252431C000E29F33 /* AudioModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,7 +614,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F6FE7C6725213CF000E4B982 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+		F615CB4A2524314D00E29F33 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
 			requirement = {
@@ -605,9 +625,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F6FE7C6825213CF000E4B982 /* ComposableArchitecture */ = {
+		F615CB4B2524314D00E29F33 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F6FE7C6725213CF000E4B982 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			package = F615CB4A2524314D00E29F33 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
 		};
 /* End XCSwiftPackageProductDependency section */
