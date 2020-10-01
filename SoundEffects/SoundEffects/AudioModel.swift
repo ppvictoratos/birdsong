@@ -13,7 +13,6 @@ import AVFoundation
 
 public struct AudioState {
     public var session: AVAudioSession = AVAudioSession()
-//    public var sampleURL = URL(fileURLWithPath: "OutskirtStand.mp3")
     public var recorder: AVAudioRecorder = AVAudioRecorder()
 
     public init(
