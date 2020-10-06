@@ -17,6 +17,7 @@
 		F634DA77251C28B400FA2D86 /* SoundEffectsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F634DA76251C28B400FA2D86 /* SoundEffectsTests.swift */; };
 		F634DA82251C28B400FA2D86 /* SoundEffectsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F634DA81251C28B400FA2D86 /* SoundEffectsUITests.swift */; };
 		F634DA90251C29BA00FA2D86 /* EffectsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F634DA8F251C29BA00FA2D86 /* EffectsModel.swift */; };
+		F66BD955252C0B140085686A /* JACKBOYS.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F66BD954252C0B140085686A /* JACKBOYS.mp3 */; };
 		F6A09C43252573B80062D295 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F6A09C42252573B80062D295 /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		F634DA81251C28B400FA2D86 /* SoundEffectsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectsUITests.swift; sourceTree = "<group>"; };
 		F634DA83251C28B400FA2D86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F634DA8F251C29BA00FA2D86 /* EffectsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsModel.swift; sourceTree = "<group>"; };
+		F66BD954252C0B140085686A /* JACKBOYS.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = JACKBOYS.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		F634DA63251C28B200FA2D86 /* SoundEffects */ = {
 			isa = PBXGroup;
 			children = (
+				F66BD954252C0B140085686A /* JACKBOYS.mp3 */,
 				F634DA64251C28B200FA2D86 /* SoundEffectsApp.swift */,
 				F634DA66251C28B200FA2D86 /* ContentView.swift */,
 				F621F2BE2522D38700966E53 /* NOT MINE.swift */,
@@ -261,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F66BD955252C0B140085686A /* JACKBOYS.mp3 in Resources */,
 				F634DA6C251C28B300FA2D86 /* Preview Assets.xcassets in Resources */,
 				F615CB3D25241ACA00E29F33 /* Outskirt Stand.mp3 in Resources */,
 				F634DA69251C28B300FA2D86 /* Assets.xcassets in Resources */,
