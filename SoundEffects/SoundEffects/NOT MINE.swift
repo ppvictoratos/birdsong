@@ -197,3 +197,54 @@ struct Home_Preview: PreviewProvider {
         Home()
     }
 }
+
+
+///  Created by Macbook on 7/30/20.
+///  Copyright © 2020 Matt Pfeiffer. All rights reserved.
+struct VerticalBar: View {
+    
+    @Binding var amplitude: Double
+    
+    var body: some View {
+        GeometryReader
+        { geometry in
+            ZStack(alignment: .bottom){
+                
+                // Colored rectangle in back of ZStack
+                Rectangle()
+                    .fill(LinearGradient(gradient: Gradient(colors: [.red, .yellow, Color("KW")]), startPoint: .top, endPoint: .center))
+                
+                // Dynamic black mask padded from bottom in relation to the amplitude
+                Rectangle()
+                    .fill(Color.black)
+                    .mask(Rectangle().padding(.bottom, geometry.size.height * CGFloat(self.amplitude)))
+                    .animation(.easeOut(duration: 0.15))
+                
+                // White bar with slower animation for floating effect
+                Rectangle()
+                    .fill(Color.white)
+                    .frame(height: geometry.size.height * 0.005)
+                    .offset(x: 0.0, y: -geometry.size.height * CGFloat(self.amplitude) - geometry.size.height * 0.02)
+                    .animation(.easeOut(duration: 0.6))
+                
+            }
+            .padding(geometry.size.width * 0.1)
+            .border(Color.black, width: geometry.size.width * 0.1)
+        }
+    }
+    
+}
+
+struct AmplitudeVisualizer: View {
+    
+    @Binding var amplitudes: [Double]
+    
+    var body: some View {
+        HStack(spacing: 0.0){
+            ForEach(0 ..< self.amplitudes.count) { number in
+                VerticalBar(amplitude: self.$amplitudes[number])
+            }
+        }
+        .background(Color.black)
+    }
+}

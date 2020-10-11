@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "AudioKit",
+        "repositoryURL": "https://github.com/eelcokoelewijn/AudioKit.git",
+        "state": {
+          "branch": null,
+          "revision": "0ba1a6ae4b1181d0b2411d7028ae3eebdc98e32d",
+          "version": "1.2.1"
+        }
+      },
+      {
         "package": "combine-schedulers",
         "repositoryURL": "https://github.com/pointfreeco/combine-schedulers",
         "state": {

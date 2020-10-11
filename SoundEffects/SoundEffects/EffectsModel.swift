@@ -8,7 +8,6 @@
 import Combine
 import Foundation
 import AVFoundation
-import ComposableArchitecture
 
 class EffectsModel {
     
@@ -19,6 +18,46 @@ class EffectsModel {
     }
     
 }
+
+//generator unit - to create audio according to a dsp
+    // w/o midi - kAudioUnitType_Generator
+    // w midi - kAudioUnitType_MusicDevice
+//effect unit - to modify audio according to a dsp
+    // w/o midi - kAudioUnitType_Effect
+    // w midi - kAudioUnitType_MusicEffect
+
+
+//may need some objc
+//    @implementation AudioUnitViewController {
+//        AUAudioUnit *audioUnit;
+//    }
+//
+//    - (AUAudioUnit *)createAudioUnitWithComponentDescription:(AudioComponentDescription)desc error:(NSError **)error {
+//        audioUnit = [[MyAudioUnit alloc] initWithComponentDescription:desc error:error];
+//
+//        // Check if the UI has been loaded
+//        if(self.isViewLoaded) {
+//            [self connectUIToAudioUnit];
+//        }
+//
+//        return audioUnit;
+//    }
+//
+//    - (void) viewDidLoad {
+//        [super viewDidLoad];
+//
+//        // Check if the Audio Unit has been loaded
+//        if(audioUnit) {
+//            [self connectUIToAudioUnit];
+//        }
+//    }
+//
+//    - (void)connectUIToAudioUnit {
+//        // Get the parameter tree and add observers for any parameters that the UI needs to keep in sync with the Audio Unit
+//    }
+//
+//    @end
+
 
 // Import audio
 

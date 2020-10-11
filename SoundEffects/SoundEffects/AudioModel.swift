@@ -12,55 +12,26 @@ import AVFoundation
 import CoreAudioKit
 import CoreAudio //needs AUAudioUnitFactory
 
-//generator unit - to create audio according to a dsp
-    // w/o midi - kAudioUnitType_Generator
-    // w midi - kAudioUnitType_MusicDevice
-//effect unit - to modify audio according to a dsp
-    // w/o midi - kAudioUnitType_Effect
-    // w midi - kAudioUnitType_MusicEffect
+//if I have an AudioState, should I have a visualizer state?
+//how does this work then?..
+//[||||||.......] loading..
+//so i use a view store for all of these models to live in and they communicate through those hallways
+
+let urlB = Bundle.main.path(forResource: "JACKBOYS", ofType: "mp3")
 
 public struct AudioState {
     public var session: AVAudioSession = AVAudioSession()
     public var recorder: AVAudioRecorder = AVAudioRecorder()
-    
-    //may need some objc
-//    @implementation AudioUnitViewController {
-//        AUAudioUnit *audioUnit;
-//    }
-//
-//    - (AUAudioUnit *)createAudioUnitWithComponentDescription:(AudioComponentDescription)desc error:(NSError **)error {
-//        audioUnit = [[MyAudioUnit alloc] initWithComponentDescription:desc error:error];
-//
-//        // Check if the UI has been loaded
-//        if(self.isViewLoaded) {
-//            [self connectUIToAudioUnit];
-//        }
-//
-//        return audioUnit;
-//    }
-//
-//    - (void) viewDidLoad {
-//        [super viewDidLoad];
-//
-//        // Check if the Audio Unit has been loaded
-//        if(audioUnit) {
-//            [self connectUIToAudioUnit];
-//        }
-//    }
-//
-//    - (void)connectUIToAudioUnit {
-//        // Get the parameter tree and add observers for any parameters that the UI needs to keep in sync with the Audio Unit
-//    }
-//
-//    @end
-
+    public var audioPlayer: AVAudioPlayer = AVAudioPlayer()
 
     public init(
         session: AVAudioSession = AVAudioSession(),
-        recorder: AVAudioRecorder = AVAudioRecorder()
+        recorder: AVAudioRecorder = AVAudioRecorder(),
+        audioPlayer: AVAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlB!))
     ) {
         self.session = session
         self.recorder = recorder
+        self.audioPlayer = audioPlayer
     }
 }
 
@@ -85,7 +56,7 @@ public let audioReducer = Reducer<AudioState, AudioState.Action, AudioEnvironmen
             return .none
         case .record:
             state.session = AVAudioSession.sharedInstance()
-            //how to get user's attention to allow recording?
+            //how to get user's permission to allow recording?
             
             return .none
         case .playback:
@@ -109,21 +80,6 @@ public struct AudioTestEnvironment {
     public init() { }
 }
 
-//func application(_ application: UIApplication,
-//                 didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//
-//    // Get the singleton instance.
-//    let audioSession = AVAudioSession.sharedInstance()
-//    do {
-//        // Set the audio session category, mode, and options.
-//        try audioSession.setCategory(.playback, mode: .moviePlayback, options: [])
-//    } catch {
-//        print("Failed to set audio session category.")
-//    }
-//
-//    // Other post-launch configuration.
-//    return true
-//}
 
 func startRecording() {
     var recorder: AVAudioRecorder = AVAudioRecorder()
