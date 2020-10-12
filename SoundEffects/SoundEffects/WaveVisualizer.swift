@@ -10,15 +10,6 @@ import SwiftUI
 import AVFoundation
 import CoreAudio
 
-//let's build a sound visualizer with no help. you can do this.
-    
-    //start simple
-    
-    //i will have a bar that is either above or below the axis based upon if an audio sample reaches a certain db level
-    
-    
-    
-    //this will look like shit, do it anyways
 let url = Bundle.main.path(forResource: "JACKBOYS", ofType: "mp3")
 
 

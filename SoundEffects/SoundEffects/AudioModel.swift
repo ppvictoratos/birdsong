@@ -22,16 +22,16 @@ let urlC = Bundle.main.path(forResource: "JACKBOYS", ofType: "mp3")
 public struct AudioState {
     public var session: AVAudioSession = AVAudioSession()
     public var recorder: AVAudioRecorder = AVAudioRecorder()
-    public var audioPlayer: AVAudioPlayer = AVAudioPlayer()
+    //public var audioPlayer: AVAudioPlayer = AVAudioPlayer()
 
     public init(
         session: AVAudioSession = AVAudioSession(),
-        recorder: AVAudioRecorder = AVAudioRecorder(),
-        audioPlayer: AVAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlC!))
+        recorder: AVAudioRecorder = AVAudioRecorder()
+        //audioPlayer: AVAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlC!))
     ) {
         self.session = session
         self.recorder = recorder
-        self.audioPlayer = audioPlayer
+        //self.audioPlayer = audioPlayer
     }
 }
 

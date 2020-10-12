@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		F615CB3D25241ACA00E29F33 /* Outskirt Stand.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F615CB3C25241ACA00E29F33 /* Outskirt Stand.mp3 */; };
 		F615CB52252431C000E29F33 /* AudioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F615CB51252431C000E29F33 /* AudioModel.swift */; };
-		F621F2BF2522D38700966E53 /* NOT MINE.swift in Sources */ = {isa = PBXBuildFile; fileRef = F621F2BE2522D38700966E53 /* NOT MINE.swift */; };
 		F634DA65251C28B200FA2D86 /* SoundEffectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F634DA64251C28B200FA2D86 /* SoundEffectsApp.swift */; };
 		F634DA67251C28B200FA2D86 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F634DA66251C28B200FA2D86 /* ContentView.swift */; };
 		F634DA69251C28B300FA2D86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F634DA68251C28B300FA2D86 /* Assets.xcassets */; };
@@ -18,7 +17,6 @@
 		F634DA82251C28B400FA2D86 /* SoundEffectsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F634DA81251C28B400FA2D86 /* SoundEffectsUITests.swift */; };
 		F634DA90251C29BA00FA2D86 /* EffectsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F634DA8F251C29BA00FA2D86 /* EffectsModel.swift */; };
 		F652BE75252C2F23005AEB76 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = F652BE74252C2F23005AEB76 /* AudioKit */; };
-		F652BE7A252C30D8005AEB76 /* MicrophoneMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F652BE79252C30D8005AEB76 /* MicrophoneMonitor.swift */; };
 		F667A9C72532716C007A9F50 /* WaveVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F667A9C62532716C007A9F50 /* WaveVisualizer.swift */; };
 		F6A09C43252573B80062D295 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F6A09C42252573B80062D295 /* ComposableArchitecture */; };
 		F6EC80602532C2B00059C754 /* JACKBOYS.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F6EC805F2532C2AF0059C754 /* JACKBOYS.mp3 */; };
@@ -44,7 +42,6 @@
 /* Begin PBXFileReference section */
 		F615CB3C25241ACA00E29F33 /* Outskirt Stand.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Outskirt Stand.mp3"; sourceTree = "<group>"; };
 		F615CB51252431C000E29F33 /* AudioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioModel.swift; sourceTree = "<group>"; };
-		F621F2BE2522D38700966E53 /* NOT MINE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NOT MINE.swift"; sourceTree = "<group>"; };
 		F634DA61251C28B200FA2D86 /* SoundEffects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundEffects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F634DA64251C28B200FA2D86 /* SoundEffectsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectsApp.swift; sourceTree = "<group>"; };
 		F634DA66251C28B200FA2D86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,7 +55,6 @@
 		F634DA81251C28B400FA2D86 /* SoundEffectsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectsUITests.swift; sourceTree = "<group>"; };
 		F634DA83251C28B400FA2D86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F634DA8F251C29BA00FA2D86 /* EffectsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsModel.swift; sourceTree = "<group>"; };
-		F652BE79252C30D8005AEB76 /* MicrophoneMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophoneMonitor.swift; sourceTree = "<group>"; };
 		F667A9C62532716C007A9F50 /* WaveVisualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveVisualizer.swift; sourceTree = "<group>"; };
 		F6EC805F2532C2AF0059C754 /* JACKBOYS.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = JACKBOYS.mp3; path = "../../../../../Music/iTunes/iTunes Media/Music/JACKBOYS/JACKBOYS/JACKBOYS.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,8 +123,6 @@
 				F634DA66251C28B200FA2D86 /* ContentView.swift */,
 				F634DA8F251C29BA00FA2D86 /* EffectsModel.swift */,
 				F667A9C62532716C007A9F50 /* WaveVisualizer.swift */,
-				F621F2BE2522D38700966E53 /* NOT MINE.swift */,
-				F652BE79252C30D8005AEB76 /* MicrophoneMonitor.swift */,
 				F615CB51252431C000E29F33 /* AudioModel.swift */,
 				F634DA68251C28B300FA2D86 /* Assets.xcassets */,
 				F634DA6D251C28B300FA2D86 /* Info.plist */,
@@ -306,8 +300,6 @@
 				F634DA67251C28B200FA2D86 /* ContentView.swift in Sources */,
 				F634DA65251C28B200FA2D86 /* SoundEffectsApp.swift in Sources */,
 				F667A9C72532716C007A9F50 /* WaveVisualizer.swift in Sources */,
-				F652BE7A252C30D8005AEB76 /* MicrophoneMonitor.swift in Sources */,
-				F621F2BF2522D38700966E53 /* NOT MINE.swift in Sources */,
 				F615CB52252431C000E29F33 /* AudioModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

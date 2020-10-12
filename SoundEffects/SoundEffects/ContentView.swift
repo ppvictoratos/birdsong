@@ -58,7 +58,7 @@ struct ContentView: View {
                 EffectControls(audioPlayer: audioPlayer)
             }
             
-        }.onReceive(timer) { (_) in //view
+        }.onReceive(timer) { (_) in
             if audioPlayer.isPlaying {
                 audioPlayer.updateMeters()
                 time = Float(audioPlayer.currentTime / audioPlayer.duration)
@@ -67,10 +67,10 @@ struct ContentView: View {
             else {
                 album.isPlaying = false
             }
-        }.onAppear(perform: getAudioData) //view / audio7?
+        }.onAppear(perform: getAudioData)
     }
     
-    func waveAnimation() { //view
+    func waveAnimation() {
         var power: Float = 0.0
         
         for i in 0..<audioPlayer.numberOfChannels {
@@ -86,7 +86,7 @@ struct ContentView: View {
         }
     }
     
-    func getAudioData(){ //to be safe i'd do audio7 here
+    func getAudioData(){
         
         audioPlayer.isMeteringEnabled = true
         
