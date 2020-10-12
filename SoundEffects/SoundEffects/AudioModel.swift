@@ -17,7 +17,7 @@ import CoreAudio //needs AUAudioUnitFactory
 //[||||||.......] loading..
 //so i use a view store for all of these models to live in and they communicate through those hallways
 
-let urlB = Bundle.main.path(forResource: "JACKBOYS", ofType: "mp3")
+let urlC = Bundle.main.path(forResource: "JACKBOYS", ofType: "mp3")
 
 public struct AudioState {
     public var session: AVAudioSession = AVAudioSession()
@@ -27,7 +27,7 @@ public struct AudioState {
     public init(
         session: AVAudioSession = AVAudioSession(),
         recorder: AVAudioRecorder = AVAudioRecorder(),
-        audioPlayer: AVAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlB!))
+        audioPlayer: AVAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlC!))
     ) {
         self.session = session
         self.recorder = recorder

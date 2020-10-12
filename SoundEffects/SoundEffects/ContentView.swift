@@ -30,6 +30,8 @@ struct ContentView: View {
     @State var audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlB!)) //audio7
     
     @State var timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect() //audio7 (view might need its own?)
+    //try publishing on a background thread
+    //keep a timer thread 
     
     @State var maxWidth = UIScreen.main.bounds.width / 2.2 //view
     
@@ -51,9 +53,9 @@ struct ContentView: View {
                 })).padding(EdgeInsets(top: 45, leading: 45, bottom: 45, trailing: 45))
                 ZStack {
                     WaveVisualizer()
-                    PlaybackControls()
+                    PlaybackControls(audioPlayer: audioPlayer)
                 }
-                EffectControls()
+                EffectControls(audioPlayer: audioPlayer)
             }
             
         }.onReceive(timer) { (_) in //view
@@ -154,6 +156,8 @@ struct WaveVisualizer: View { //View
 }
 
 struct PlaybackControls: View { //View
+    var audioPlayer: AVAudioPlayer
+    
     var body: some View {
         HStack {
             Button(action: {
@@ -185,6 +189,8 @@ struct PlaybackControls: View { //View
 }
 
 struct EffectControls: View { //View
+    var audioPlayer: AVAudioPlayer
+    
     var body: some View {
         VStack {
             //OVERKILL UNDO
