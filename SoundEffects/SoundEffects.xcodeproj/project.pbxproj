@@ -16,6 +16,8 @@
 		F634DA77251C28B400FA2D86 /* SoundEffectsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F634DA76251C28B400FA2D86 /* SoundEffectsTests.swift */; };
 		F634DA82251C28B400FA2D86 /* SoundEffectsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F634DA81251C28B400FA2D86 /* SoundEffectsUITests.swift */; };
 		F634DA90251C29BA00FA2D86 /* EffectsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F634DA8F251C29BA00FA2D86 /* EffectsModel.swift */; };
+		F63E405F253552EF000A9CCB /* 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F63E405E253552EE000A9CCB /* 01.mp3 */; };
+		F63E406425355328000A9CCB /* 02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F63E406325355328000A9CCB /* 02.mp3 */; };
 		F652BE75252C2F23005AEB76 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = F652BE74252C2F23005AEB76 /* AudioKit */; };
 		F667A9C72532716C007A9F50 /* WaveVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F667A9C62532716C007A9F50 /* WaveVisualizer.swift */; };
 		F6A09C43252573B80062D295 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F6A09C42252573B80062D295 /* ComposableArchitecture */; };
@@ -55,6 +57,8 @@
 		F634DA81251C28B400FA2D86 /* SoundEffectsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectsUITests.swift; sourceTree = "<group>"; };
 		F634DA83251C28B400FA2D86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F634DA8F251C29BA00FA2D86 /* EffectsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsModel.swift; sourceTree = "<group>"; };
+		F63E405E253552EE000A9CCB /* 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 01.mp3; path = "../../A 2NiNG4K/A 2NiNG4K/Audio Files/01.mp3"; sourceTree = "<group>"; };
+		F63E406325355328000A9CCB /* 02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 02.mp3; path = "../../A 2NiNG4K/A 2NiNG4K/Audio Files/02.mp3"; sourceTree = "<group>"; };
 		F667A9C62532716C007A9F50 /* WaveVisualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveVisualizer.swift; sourceTree = "<group>"; };
 		F6EC805F2532C2AF0059C754 /* JACKBOYS.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = JACKBOYS.mp3; path = "../../../../../Music/iTunes/iTunes Media/Music/JACKBOYS/JACKBOYS/JACKBOYS.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				F6EC805F2532C2AF0059C754 /* JACKBOYS.mp3 */,
+				F63E406325355328000A9CCB /* 02.mp3 */,
+				F63E405E253552EE000A9CCB /* 01.mp3 */,
 				F634DA64251C28B200FA2D86 /* SoundEffectsApp.swift */,
 				F634DA66251C28B200FA2D86 /* ContentView.swift */,
 				F634DA8F251C29BA00FA2D86 /* EffectsModel.swift */,
@@ -268,7 +274,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F63E405F253552EF000A9CCB /* 01.mp3 in Resources */,
 				F634DA6C251C28B300FA2D86 /* Preview Assets.xcassets in Resources */,
+				F63E406425355328000A9CCB /* 02.mp3 in Resources */,
 				F615CB3D25241ACA00E29F33 /* Outskirt Stand.mp3 in Resources */,
 				F634DA69251C28B300FA2D86 /* Assets.xcassets in Resources */,
 				F6EC80602532C2B00059C754 /* JACKBOYS.mp3 in Resources */,

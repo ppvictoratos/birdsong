@@ -12,6 +12,9 @@ import AVFoundation
 
 public struct AudioState {
     
+    //struct Sound (path: URL)
+    //if you had an array of sounds (with a PlaySounds extension) you can essentially create a queue
+    
     public var player1: AVAudioPlayer = AVAudioPlayer()
     public var player2: AVAudioPlayer = AVAudioPlayer()
     

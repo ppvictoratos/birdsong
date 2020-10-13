@@ -14,15 +14,10 @@ import AVFoundation
 //TODO: fix output volume (screen recording sounds is too loud)
 //TODO: make app icon
 //TODO: implement pause play
-//TODO: get reverb working
 //TODO: get fun effect working
-//TODO: allow user to record audio
-//TODO: allow user to save audio
-//TODO: allow user to have audio library w info & such
+//TODO: run animation/audio timer on background thread
 
-var audioUnit: AudioUnit!
-let numberOfSamples: Int = 10
-let urlB = Bundle.main.path(forResource: "JACKBOYS", ofType: "mp3")
+let urlB = Bundle.main.path(forResource: "02", ofType: "mp3")
 
 struct ContentView: View {
     @StateObject var album = album_Data() //now is this view or audio..?
@@ -42,23 +37,30 @@ struct ContentView: View {
     @State var time: Float = 0 //audio7 (view might need its own?)
     
     var body: some View {
-        VStack {
-            SELogo()
-            // MARK: - MY AUDIO CONTROLS
             VStack {
+                SELogo()
                 Slider(value: Binding(get: {time}, set: { (newValue) in
                     time = newValue
                     audioPlayer.currentTime = Double(time) * audioPlayer.duration
                     audioPlayer.play()
                 })).padding(EdgeInsets(top: 45, leading: 45, bottom: 45, trailing: 45))
                 ZStack {
-                    WaveVisualizer()
-                    PlaybackControls(audioPlayer: audioPlayer)
+                    VStack {
+                        PlaybackControls(audioPlayer: audioPlayer)
+                        EffectControls(audioPlayer: audioPlayer)
+                    }
+                    ZStack{
+                        Circle()
+                            .fill(Color.white.opacity(0.10))
+                        
+                        Circle()
+                            .fill(Color.white.opacity(0.12))
+                            .frame(width: animatedValue / 2, height: animatedValue / 2)
+                    }
+                    .frame(width: animatedValue, height: animatedValue)
+                    .offset(x: 0, y: -175)
                 }
-                EffectControls(audioPlayer: audioPlayer)
-            }
-            
-        }.onReceive(timer) { (_) in
+            }.onReceive(timer) { (_) in
             if audioPlayer.isPlaying {
                 audioPlayer.updateMeters()
                 time = Float(audioPlayer.currentTime / audioPlayer.duration)
@@ -138,25 +140,9 @@ struct SELogo: View { //view
     }
 }
 
-struct WaveVisualizer: View { //View
-    @State var animatedValue: CGFloat = 55
-    
-    var body: some View {
-        ZStack{
-            Circle()
-                .fill(Color.white.opacity(0.10))
-            
-            Circle()
-                .fill(Color.white.opacity(0.12))
-                .frame(width: animatedValue / 2, height: animatedValue / 2)
-        }
-        .frame(width: animatedValue, height: animatedValue)
-        .offset(x: -8, y: 0)
-    }
-}
-
 struct PlaybackControls: View { //View
     var audioPlayer: AVAudioPlayer
+    var paused: Bool = true
     
     var body: some View {
         HStack {
@@ -165,16 +151,17 @@ struct PlaybackControls: View { //View
             }) {
                 Image(systemName: "gobackward.10").foregroundColor(Color("MainColor")).font(.system(size: 60))
             }.padding(.trailing, 15)
+            
             ZStack{
-                
-                
                 Button(action: {
-                    //Play / Pause song
-                    audioPlayer.play()
+                    //Play / Pause audio
+                    
+                    //isPlaying stays on even when paused
+                        audioPlayer.play()
+                    
                 }) {
-                    //add state to pause
-                    //pause.circle.fill
-                    Image(systemName: "play.circle.fill").foregroundColor(Color("hotpink")).font(.system(size: 60))
+                    Image(systemName:  audioPlayback(isPlaying: audioPlayer.isPlaying))
+                        .foregroundColor(Color("hotpink")).font(.system(size: 60))
                 }.padding(.trailing, 15)
             }
             
@@ -186,6 +173,9 @@ struct PlaybackControls: View { //View
             }
         }
     }
+    
+    func audioPlayback(isPlaying: Bool) -> String { return isPlaying ? "pause.circle.fill" : "play.circle.fill" }
+
 }
 
 struct EffectControls: View { //View
@@ -195,7 +185,7 @@ struct EffectControls: View { //View
         VStack {
             //OVERKILL UNDO
             Button(action: {
-                audioPlayer.setVolume(5.0, fadeDuration: TimeInterval(3))
+                audioPlayer.setVolume(2.0, fadeDuration: TimeInterval(3))
             }) {
                 Image(systemName: "arrow.uturn.left.square").font(.system(size: 60)).padding(10).foregroundColor(Color("KW"))
             }
@@ -208,23 +198,21 @@ struct EffectControls: View { //View
             //INCREASE REVERB STATICALLY
             Button(action: {
                 //reverb
-                
+                audioPlayer.setVolume(0.0, fadeDuration: 0.0)
             }) {
-                Image(systemName: "r.circle").font(.system(size: 60)).padding(/*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/).foregroundColor(Color("hotpink"))
+                Image(systemName: "speaker").font(.system(size: 60)).padding(/*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/).foregroundColor(Color("hotpink"))
             }
             //DOES SOMETHING FUN
             Button(action: {
                 //fun effect
+                //make subwoofer effect..
+                    //i would have to build out two entirely different UI's..?
             }) {
                 Image(systemName: "wand.and.rays").font(.system(size: 60)).padding(10).foregroundColor(Color("hotpink"))
             }
         }
     }
 }
-
-
-//struct Sound (path: URL)
-//if you had an array of sounds (with a PlaySounds extension) you can essentially create a queue
 
 //have local sound take a sound, set a volume and play it, return the sound. that sound can be further edited through chaining
 
