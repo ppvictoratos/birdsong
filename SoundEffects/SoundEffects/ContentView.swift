@@ -10,11 +10,10 @@ import CoreAudioKit
 import AVFoundation
 
 //DONE: fix UI
-//TODO: TCA it
 //TODO: fix output volume (screen recording sounds is too loud)
 //TODO: make app icon
 //TODO: implement pause play
-//TODO: get fun effect working
+//TODO: get fun effect working - subwoofer toggle
 //TODO: run animation/audio timer on background thread
 
 let urlB = Bundle.main.path(forResource: "02", ofType: "mp3")
@@ -49,6 +48,7 @@ struct ContentView: View {
                         PlaybackControls(audioPlayer: audioPlayer)
                         EffectControls(audioPlayer: audioPlayer)
                     }
+                    //WaveVisualizer() how did I do the subwoofer thing..?
                     ZStack{
                         Circle()
                             .fill(Color.white.opacity(0.10))
@@ -137,6 +137,23 @@ struct SELogo: View { //view
             Image(systemName: "tuningfork").foregroundColor(Color("KW")).font(.system(size: 90)).padding().offset(x: -2.5, y:0)
             Image(systemName: "tuningfork").foregroundColor(Color("hotpink")).font(.system(size: 90)).padding().offset(x:2.5,y:0)
         }
+    }
+}
+
+struct WaveVisualizer: View { //View
+    @State var animatedValue: CGFloat = 55
+    
+    var body: some View {
+        ZStack{
+            Circle()
+                .fill(Color.white.opacity(0.10))
+            
+            Circle()
+                .fill(Color.white.opacity(0.12))
+                .frame(width: animatedValue / 2, height: animatedValue / 2)
+        }
+        .frame(width: animatedValue, height: animatedValue)
+        .offset(x: -8, y: 0)
     }
 }
 
