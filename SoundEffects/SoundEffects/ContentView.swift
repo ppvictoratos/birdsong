@@ -29,26 +29,48 @@ struct ContentView: View {
     
     @State var maxWidth = UIScreen.main.bounds.width / 2.2 //view
     
-    @State var loudEnough: Bool = false //don't need this
+    @State var woofer: Bool = false //don't need this
     
     @State var animatedValue: CGFloat = 55 //view
     
     @State var time: Float = 0 //audio7 (view might need its own?)
     
     var body: some View {
-            VStack {
+        ZStack {
+        VStack {
                 SELogo()
+                
                 Slider(value: Binding(get: {time}, set: { (newValue) in
                     time = newValue
                     audioPlayer.currentTime = Double(time) * audioPlayer.duration
                     audioPlayer.play()
                 })).padding(EdgeInsets(top: 45, leading: 45, bottom: 45, trailing: 45))
-                ZStack {
-                    VStack {
-                        PlaybackControls(audioPlayer: audioPlayer)
-                        EffectControls(audioPlayer: audioPlayer)
-                    }
-                    //WaveVisualizer() how did I do the subwoofer thing..?
+                
+                PlaybackControls(audioPlayer: audioPlayer)
+                
+                            Button(action: {
+                                audioPlayer.setVolume(2.0, fadeDuration: TimeInterval(3))
+                            }) {
+                                Image(systemName: "arrow.uturn.left.square").font(.system(size: 60)).padding(10).foregroundColor(Color("KW"))
+                            }
+                            Button(action: {
+                                audioPlayer.setVolume(20.0, fadeDuration: TimeInterval(3))
+                            }) {
+                                Image(systemName: "capslock").font(.system(size: 60)).padding(10).foregroundColor(Color("hotpink"))
+                            }
+                            Button(action: {
+                                audioPlayer.setVolume(0.0, fadeDuration: 0.0)
+                            }) {
+                                Image(systemName: "speaker").font(.system(size: 60)).padding(/*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/).foregroundColor(Color("hotpink"))
+                            }
+                            Button(action: {
+                                woofer.toggle()
+                            }) {
+                                Image(systemName: "wand.and.rays").font(.system(size: 60)).padding(10).foregroundColor(Color("hotpink"))
+                            }
+            }.frame(width: woofer ? UIScreen.main.bounds.width : animatedValue,
+                    height: woofer ? UIScreen.main.bounds.height : animatedValue)
+                
                     ZStack{
                         Circle()
                             .fill(Color.white.opacity(0.10))
@@ -58,9 +80,9 @@ struct ContentView: View {
                             .frame(width: animatedValue / 2, height: animatedValue / 2)
                     }
                     .frame(width: animatedValue, height: animatedValue)
-                    .offset(x: 0, y: -175)
-                }
-            }.onReceive(timer) { (_) in
+                    .offset(x: 0, y: -250)
+                
+                }.onReceive(timer) { (_) in
             if audioPlayer.isPlaying {
                 audioPlayer.updateMeters()
                 time = Float(audioPlayer.currentTime / audioPlayer.duration)
@@ -197,6 +219,7 @@ struct PlaybackControls: View { //View
 
 struct EffectControls: View { //View
     var audioPlayer: AVAudioPlayer
+    var woof: Bool
     
     var body: some View {
         VStack {
@@ -222,8 +245,7 @@ struct EffectControls: View { //View
             //DOES SOMETHING FUN
             Button(action: {
                 //fun effect
-                //make subwoofer effect..
-                    //i would have to build out two entirely different UI's..?
+                 
             }) {
                 Image(systemName: "wand.and.rays").font(.system(size: 60)).padding(10).foregroundColor(Color("hotpink"))
             }
