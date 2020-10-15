@@ -16,13 +16,11 @@ import CoreAudio //needs AUAudioUnitFactory
 //[||||||.......] loading..
 //so i use a view store for all of these models to live in and they communicate through those hallways
 
-let urlC = Bundle.main.path(forResource: "JACKBOYS", ofType: "mp3")
-
 public struct AudioState {
     public var session: AVAudioSession = AVAudioSession()
     public var recorder: AVAudioRecorder = AVAudioRecorder()
     //public var audioPlayer: AVAudioPlayer = AVAudioPlayer()
-
+    
     public init(
         session: AVAudioSession = AVAudioSession(),
         recorder: AVAudioRecorder = AVAudioRecorder()
@@ -51,23 +49,35 @@ public extension AudioState {
 
 public let audioReducer = Reducer<AudioState, AudioState.Action, AudioEnvironment> { state, action, env in
     switch action {
-        case .none:
-            return .none
-        case .record:
-            state.session = AVAudioSession.sharedInstance()
-            //how to get user's permission to allow recording?
-            
-            return .none
-        case .playback:
-            return .none
-        case .pause:
-            return .none
-        case .gain:
-            return .none
-        case .reverb:
-            return .none
-        case .fun:
-            return .none
+    case .none:
+        return .none
+    case .record:
+        state.session = AVAudioSession.sharedInstance()
+        
+        do {
+            try state.session.setCategory(.playAndRecord, mode: .default)
+            try state.session.setActive(true)
+            state.session.requestRecordPermission() { allowed in
+                DispatchQueue.main.async {
+                    if allowed {
+                        startRecording()
+                    } else { }
+                }
+            }
+        } catch {
+            //where to put the stop record?
+        }
+        return .none
+    case .playback:
+        return .none
+    case .pause:
+        return .none
+    case .gain:
+        return .none
+    case .reverb:
+        return .none
+    case .fun:
+        return .none
     }
 }
 

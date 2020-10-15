@@ -44,7 +44,7 @@ struct ContentView: View {
                 SELogo()
                 AudioSlider(time: time, audioPlayer: audioPlayer)
                 PlaybackControls(audioPlayer: audioPlayer)
-            EffectControls(audioPlayer: audioPlayer, woof: woofer).frame(height: woofer ? UIScreen.main.bounds.width : animatedValue, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            EffectControls(audioPlayer: audioPlayer, woof: woofer).frame(height: woofer ? UIScreen.main.bounds.width : animatedValue, alignment: .center)
             
             }.frame(width: woofer ? UIScreen.main.bounds.width : animatedValue,
                     height: woofer ? UIScreen.main.bounds.height : animatedValue)

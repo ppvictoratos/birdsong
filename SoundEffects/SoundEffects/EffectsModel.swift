@@ -9,15 +9,11 @@ import Combine
 import Foundation
 import AVFoundation
 
-class EffectsModel {
+public struct EffectState {
     
-    struct AudioSession {
-        var session = AVAudioSession()
-        var sampleURL = URL(fileURLWithPath: "OutskirtStand.mp3")
-        var recorder = AVAudioRecorder()
-    }
-    
+
 }
+    
 
 //this is where the magic will happen
 
