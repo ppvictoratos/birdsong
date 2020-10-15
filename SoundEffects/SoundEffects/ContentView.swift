@@ -29,7 +29,7 @@ struct ContentView: View {
     
     @State var maxWidth = UIScreen.main.bounds.width / 2.2 //view
     
-    @State var woofer: Bool = false //don't need this
+    @State var woofer: Bool = false
     
     @State var animatedValue: CGFloat = 55 //view
     
@@ -37,50 +37,17 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
+            WaveVisualizer(animatedValue: animatedValue)
+            //why can't this animate when in a struct?
+            
         VStack {
                 SELogo()
-                
-                Slider(value: Binding(get: {time}, set: { (newValue) in
-                    time = newValue
-                    audioPlayer.currentTime = Double(time) * audioPlayer.duration
-                    audioPlayer.play()
-                })).padding(EdgeInsets(top: 45, leading: 45, bottom: 45, trailing: 45))
-                
+                AudioSlider(time: time, audioPlayer: audioPlayer)
                 PlaybackControls(audioPlayer: audioPlayer)
-                
-                            Button(action: {
-                                audioPlayer.setVolume(2.0, fadeDuration: TimeInterval(3))
-                            }) {
-                                Image(systemName: "arrow.uturn.left.square").font(.system(size: 60)).padding(10).foregroundColor(Color("KW"))
-                            }
-                            Button(action: {
-                                audioPlayer.setVolume(20.0, fadeDuration: TimeInterval(3))
-                            }) {
-                                Image(systemName: "capslock").font(.system(size: 60)).padding(10).foregroundColor(Color("hotpink"))
-                            }
-                            Button(action: {
-                                audioPlayer.setVolume(0.0, fadeDuration: 0.0)
-                            }) {
-                                Image(systemName: "speaker").font(.system(size: 60)).padding(/*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/).foregroundColor(Color("hotpink"))
-                            }
-                            Button(action: {
-                                woofer.toggle()
-                            }) {
-                                Image(systemName: "wand.and.rays").font(.system(size: 60)).padding(10).foregroundColor(Color("hotpink"))
-                            }
+            EffectControls(audioPlayer: audioPlayer, woof: woofer).frame(height: woofer ? UIScreen.main.bounds.width : animatedValue, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            
             }.frame(width: woofer ? UIScreen.main.bounds.width : animatedValue,
                     height: woofer ? UIScreen.main.bounds.height : animatedValue)
-                
-                    ZStack{
-                        Circle()
-                            .fill(Color.white.opacity(0.10))
-                        
-                        Circle()
-                            .fill(Color.white.opacity(0.12))
-                            .frame(width: animatedValue / 2, height: animatedValue / 2)
-                    }
-                    .frame(width: animatedValue, height: animatedValue)
-                    .offset(x: 0, y: -250)
                 
                 }.onReceive(timer) { (_) in
             if audioPlayer.isPlaying {
@@ -163,7 +130,7 @@ struct SELogo: View { //view
 }
 
 struct WaveVisualizer: View { //View
-    @State var animatedValue: CGFloat = 55
+    @State var animatedValue: CGFloat
     
     var body: some View {
         ZStack{
@@ -176,6 +143,19 @@ struct WaveVisualizer: View { //View
         }
         .frame(width: animatedValue, height: animatedValue)
         .offset(x: -8, y: 0)
+    }
+}
+
+struct AudioSlider: View {
+    @State var time: Float
+    var audioPlayer: AVAudioPlayer
+    
+    var body: some View {
+        Slider(value: Binding(get: {time}, set: { (newValue) in
+            time = newValue
+            audioPlayer.currentTime = Double(time) * audioPlayer.duration
+            audioPlayer.play()
+        })).padding(EdgeInsets(top: 45, leading: 45, bottom: 45, trailing: 45))
     }
 }
 
