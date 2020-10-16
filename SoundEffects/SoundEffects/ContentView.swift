@@ -42,9 +42,9 @@ struct ContentView: View {
             
         VStack {
                 SELogo()
-                AudioSlider(time: time, audioPlayer: audioPlayer)
-                PlaybackControls(audioPlayer: audioPlayer)
-            EffectControls(audioPlayer: audioPlayer, woof: woofer).frame(height: woofer ? UIScreen.main.bounds.width : animatedValue, alignment: .center)
+            AudioSlider(time: time, audioPlayer: audioPlayer)
+            PlaybackControls(audioPlayer: audioPlayer)
+            EffectControls(audioPlayer: audioPlayer, woof: woofer)
             
             }.frame(width: woofer ? UIScreen.main.bounds.width : animatedValue,
                     height: woofer ? UIScreen.main.bounds.height : animatedValue)
@@ -142,7 +142,7 @@ struct WaveVisualizer: View { //View
                 .frame(width: animatedValue / 2, height: animatedValue / 2)
         }
         .frame(width: animatedValue, height: animatedValue)
-        .offset(x: -8, y: 0)
+        .offset(x: 0, y: -35)
     }
 }
 

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ComposableArchitecture
+//import Audio package
 
 struct RecordView: View {
     let store: Store<AudioState, AudioState.Action>
@@ -19,24 +20,23 @@ struct RecordView: View {
         buttonStack(self.store)
     }
     
-}
-
-func buttonStack(_ store: Store<AudioState, AudioState.Action>) -> some View {
-    WithViewStore(store) { viewStore in
-        recordButton(viewStore, title: "Record!",
-                          action: .record)
+    func buttonStack(_ store: Store<AudioState, AudioState.Action>) -> some View {
+        WithViewStore(store) { viewStore in
+            recordButton(viewStore, title: "Record!",
+                              action: .record)
+        }
     }
-}
 
-func recordButton(
-    _ viewStore: ViewStore<AudioState, AudioState.Action>,
-    title: String,
-    action: AudioState.Action) -> some View {
-    Button(action: { viewStore.send(action) }) {
-        Text(title)
-            .font(.system(size: 12.0))
-            .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
-            .foregroundColor(.black)
+    func recordButton(
+        _ viewStore: ViewStore<AudioState, AudioState.Action>,
+        title: String,
+        action: AudioState.Action) -> some View {
+        Button(action: { viewStore.send(action) }) {
+            Text(title)
+                .font(.system(size: 12.0))
+                .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                .foregroundColor(.black)
+        }
     }
 }
 
