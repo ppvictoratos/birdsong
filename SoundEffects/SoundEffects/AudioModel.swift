@@ -16,19 +16,36 @@ import CoreAudio //needs AUAudioUnitFactory
 //[||||||.......] loading..
 //so i use a view store for all of these models to live in and they communicate through those hallways
 
+//my animation should be implicit based upon the meter levels given by the avaudioplayer
+//this means that the audio player should exist where?
+//maybe in an animatable struct?
+
+//there needs to be an animatable struct somewhere.
+    //maybe make a custom audio timeline view
+    //that could animate, using chunked
+
+//make an audio struct? holds the audio data, metering levels, audio files
+
+//make an animating shape that has a bool
+//  true will show view
+//  false will show another view
+
+//  or should it be true will allow one type of animation
+//  and false will be another
+
+//the view it is embedded in will get the animate bool
+    //sound should be processed on a background thread
+
 public struct AudioState {
     public var session: AVAudioSession = AVAudioSession()
-    public var recorder: AVAudioRecorder = AVAudioRecorder()
-    //public var audioPlayer: AVAudioPlayer = AVAudioPlayer()
-    
+    public var audioPlayer: AVAudioPlayer = AVAudioPlayer()
+
     public init(
         session: AVAudioSession = AVAudioSession(),
-        recorder: AVAudioRecorder = AVAudioRecorder()
-        //audioPlayer: AVAudioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlC!))
+        audioPlayer: AVAudioPlayer = AVAudioPlayer()
     ) {
         self.session = session
-        self.recorder = recorder
-        //self.audioPlayer = audioPlayer
+        self.audioPlayer = audioPlayer
     }
 }
 
@@ -38,11 +55,9 @@ extension AudioState: Equatable { }
 public extension AudioState {
     enum Action {
         case none
-        case record
-        case playback
+        case play
         case pause
         case gain
-        case reverb
         case fun
     }
 }
@@ -51,38 +66,51 @@ public let audioReducer = Reducer<AudioState, AudioState.Action, AudioEnvironmen
     switch action {
     case .none:
         return .none
-    case .record:
-        state.session = AVAudioSession.sharedInstance()
-        
-        do {
-            try state.session.setCategory(.playAndRecord, mode: .default)
-            try state.session.setActive(true)
-            state.session.requestRecordPermission() { allowed in
-                DispatchQueue.main.async {
-                    if allowed {
-                        startRecording()
-                    } else { }
-                }
-            }
-        } catch {
-            //where to put the stop record?
-        }
-        return .none
-    case .playback:
+    case .play:
+        try state.audioPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlC!))
+        state.audioPlayer.play()
+        env.isPlaying.toggle()
         return .none
     case .pause:
+        state.audioPlayer.pause()
+        env.isPlaying.toggle()
         return .none
     case .gain:
-        return .none
-    case .reverb:
+        state.audioPlayer.setVolume(0.8)
         return .none
     case .fun:
+        env.isAnimating.toggle()
         return .none
     }
 }
 
 public struct AudioEnvironment {
-    public init() { }
+    //should have isPlaying bool
+    //should have isAnimating bool
+    //should have the timing event
+    var isPlaying: Bool
+    var isAnimating: Bool
+    @State var timer: Timer = Timer()
+    
+    public init(
+        isPlaying: Bool,
+        isAnimating: Bool,
+        timer: Timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
+    ) {
+        self.isPlaying = isPlaying
+        self.isAnimating = isAnimating
+        self.timer = timer
+    }
+
+}
+
+//do i need a reducer?
+public let audioReducer = Reducer<AudioState, AudioState.Action, AudioEnvironvment> {
+    state, action, env in
+    switch action {
+        case .none:
+            return .none
+    }
 }
 
 public struct AudioTestEnvironment {
@@ -112,3 +140,5 @@ func getDocumentsDirectory() -> URL {
     let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
     return paths[0]
 }
+
+let urlC = URL(fileURLWithPath: "01.mp3")

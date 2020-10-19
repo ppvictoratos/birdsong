@@ -37,19 +37,35 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            WaveVisualizer(animatedValue: animatedValue)
+            ZStack{
+                Circle()
+                    .fill(Color.white.opacity(0.10))
+                
+                Circle()
+                    .fill(Color.white.opacity(0.12))
+                    .frame(width: animatedValue / 2, height: animatedValue / 2)
+            }
+            .frame(width: animatedValue, height: animatedValue)
+            .offset(x: 0, y: -35)
+            .opacity(woofer ? 0 : 1.0)
+            
+            //WaveVisualizer(animatedValue: animatedValue)
             //why can't this animate when in a struct?
             
         VStack {
-                SELogo()
+            SELogo()
             AudioSlider(time: time, audioPlayer: audioPlayer)
-            PlaybackControls(audioPlayer: audioPlayer)
-            EffectControls(audioPlayer: audioPlayer, woof: woofer)
             
-            }.frame(width: woofer ? UIScreen.main.bounds.width : animatedValue,
-                    height: woofer ? UIScreen.main.bounds.height : animatedValue)
+            PlaybackControls(audioPlayer: audioPlayer).frame(width: woofer ? UIScreen.main.bounds.width : animatedValue, height: woofer ? UIScreen.main.bounds.height : animatedValue)
+            
+            
+            EffectControls(audioPlayer: audioPlayer, woof: woofer).frame(width: woofer ? UIScreen.main.bounds.width : animatedValue, height: woofer ? UIScreen.main.bounds.height : animatedValue)
+            
+            }
                 
                 }.onReceive(timer) { (_) in
+                    
+        //this is the explicit animation
             if audioPlayer.isPlaying {
                 audioPlayer.updateMeters()
                 time = Float(audioPlayer.currentTime / audioPlayer.duration)
@@ -211,9 +227,9 @@ struct EffectControls: View { //View
             }
             //INCREASE GAIN STATICLY
             Button(action: {
-                audioPlayer.setVolume(20.0, fadeDuration: TimeInterval(3))
+                audioPlayer.setVolume(0.4, fadeDuration: TimeInterval(3))
             }) {
-                Image(systemName: "capslock").font(.system(size: 60)).padding(10).foregroundColor(Color("hotpink"))
+                Image(systemName: "arrow.down.square").font(.system(size: 60)).padding(10).foregroundColor(Color("hotpink"))
             }
             //INCREASE REVERB STATICALLY
             Button(action: {
@@ -225,7 +241,7 @@ struct EffectControls: View { //View
             //DOES SOMETHING FUN
             Button(action: {
                 //fun effect
-                 
+                
             }) {
                 Image(systemName: "wand.and.rays").font(.system(size: 60)).padding(10).foregroundColor(Color("hotpink"))
             }
