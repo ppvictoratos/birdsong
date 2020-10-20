@@ -43,6 +43,7 @@ public struct AudioState {
     public init(
         session: AVAudioSession = AVAudioSession(),
         audioPlayer: AVAudioPlayer = AVAudioPlayer()
+
     ) {
         self.session = session
         self.audioPlayer = audioPlayer
@@ -62,24 +63,25 @@ public extension AudioState {
     }
 }
 
+//can i have something that throws errors in my reducer? how else can i play this audio? should I use an audio unit?
+
+//im having trouble creating my app with TCA.. where should I put the audioplayer init?
+
 public let audioReducer = Reducer<AudioState, AudioState.Action, AudioEnvironment> { state, action, env in
     switch action {
-    case .none:
-        return .none
     case .play:
-        try state.audioPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlC!))
+//        state.audioPlayer.init(contentsOf url: "01.mp3")
         state.audioPlayer.play()
-        env.isPlaying.toggle()
         return .none
     case .pause:
         state.audioPlayer.pause()
-        env.isPlaying.toggle()
         return .none
     case .gain:
-        state.audioPlayer.setVolume(0.8)
+        state.audioPlayer.setVolume(0.8, fadeDuration: 1.0)
         return .none
     case .fun:
-        env.isAnimating.toggle()
+        return .none
+    case .none:
         return .none
     }
 }
@@ -90,27 +92,18 @@ public struct AudioEnvironment {
     //should have the timing event
     var isPlaying: Bool
     var isAnimating: Bool
-    @State var timer: Timer = Timer()
+    var timer: Timer = Timer()
     
     public init(
         isPlaying: Bool,
         isAnimating: Bool,
-        timer: Timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
+        timer: Timer
     ) {
         self.isPlaying = isPlaying
         self.isAnimating = isAnimating
         self.timer = timer
     }
 
-}
-
-//do i need a reducer?
-public let audioReducer = Reducer<AudioState, AudioState.Action, AudioEnvironvment> {
-    state, action, env in
-    switch action {
-        case .none:
-            return .none
-    }
 }
 
 public struct AudioTestEnvironment {
@@ -141,4 +134,4 @@ func getDocumentsDirectory() -> URL {
     return paths[0]
 }
 
-let urlC = URL(fileURLWithPath: "01.mp3")
+let urlC = "01.mp3"

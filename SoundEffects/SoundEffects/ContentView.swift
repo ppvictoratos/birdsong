@@ -9,72 +9,45 @@ import SwiftUI
 import CoreAudioKit
 import AVFoundation
 
-//DONE: fix UI
-//TODO: fix output volume (screen recording sounds is too loud)
-//TODO: make app icon
-//TODO: implement pause play
-//TODO: get fun effect working - subwoofer toggle
-//TODO: run animation/audio timer on background thread
+//make a way to start/stop animation
+
+//make a way to toggle pause play and update button
 
 let urlB = Bundle.main.path(forResource: "02", ofType: "mp3")
 
 struct ContentView: View {
-    @StateObject var album = album_Data() //now is this view or audio..?
+    @StateObject var album = album_Data()
     
-    @State var audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlB!)) //audio7
+    @State var audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlB!))
     
-    @State var timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect() //audio7 (view might need its own?)
-    //try publishing on a background thread
-    //keep a timer thread 
+    @State var timer = Timer.publish(every: 0.01, on: .current, in: .common).autoconnect()  //what is current?
     
-    @State var maxWidth = UIScreen.main.bounds.width / 2.2 //view
+    @State var maxWidth = UIScreen.main.bounds.width / 2.2
     
     @State var woofer: Bool = false
     
-    @State var animatedValue: CGFloat = 55 //view
+    @State var isPlaying: Bool = false
     
-    @State var time: Float = 0 //audio7 (view might need its own?)
+    @State var animatedValue: CGFloat = 55
+    
+    @State var time: Float = 0
     
     var body: some View {
-        ZStack {
-            ZStack{
-                Circle()
-                    .fill(Color.white.opacity(0.10))
+        bigUI(woofer: woofer, isPlaying: isPlaying,
+              animatedValue: animatedValue,
+              audioPlayer: audioPlayer,
+              time: time).onReceive(timer) { (_) in
                 
-                Circle()
-                    .fill(Color.white.opacity(0.12))
-                    .frame(width: animatedValue / 2, height: animatedValue / 2)
-            }
-            .frame(width: animatedValue, height: animatedValue)
-            .offset(x: 0, y: -35)
-            .opacity(woofer ? 0 : 1.0)
-            
-            //WaveVisualizer(animatedValue: animatedValue)
-            //why can't this animate when in a struct?
-            
-        VStack {
-            SELogo()
-            AudioSlider(time: time, audioPlayer: audioPlayer)
-            
-            PlaybackControls(audioPlayer: audioPlayer).frame(width: woofer ? UIScreen.main.bounds.width : animatedValue, height: woofer ? UIScreen.main.bounds.height : animatedValue)
-            
-            
-            EffectControls(audioPlayer: audioPlayer, woof: woofer).frame(width: woofer ? UIScreen.main.bounds.width : animatedValue, height: woofer ? UIScreen.main.bounds.height : animatedValue)
-            
-            }
-                
-                }.onReceive(timer) { (_) in
-                    
-        //this is the explicit animation
-            if audioPlayer.isPlaying {
-                audioPlayer.updateMeters()
-                time = Float(audioPlayer.currentTime / audioPlayer.duration)
-                waveAnimation()
-            }
-            else {
-                album.isPlaying = false
-            }
-        }.onAppear(perform: getAudioData)
+                //this is the explicit animation
+                if audioPlayer.isPlaying {
+                    audioPlayer.updateMeters()
+                    time = Float(audioPlayer.currentTime / audioPlayer.duration)
+                    waveAnimation()
+                }
+                else {
+                    album.isPlaying = false
+                }
+              }.onAppear(perform: getAudioData)
     }
     
     func waveAnimation() {
@@ -92,6 +65,8 @@ struct ContentView: View {
             self.animatedValue = animated + 55
         }
     }
+    
+    //create protocol witness for shape animator
     
     func getAudioData(){
         
@@ -135,6 +110,38 @@ class album_Data : ObservableObject { // audio7
 
 // MARK: - STRUCTS
 
+struct bigUI: View {
+    var woofer: Bool
+    var isPlaying: Bool
+    var animatedValue: CGFloat
+    var audioPlayer: AVAudioPlayer
+    var time: Float
+    
+    var body: some View {
+        ZStack {
+            ZStack{
+                Circle()
+                    .fill(Color.white.opacity(0.10))
+                
+                Circle()
+                    .fill(Color.white.opacity(0.12))
+                    .frame(width: animatedValue / 2, height: animatedValue / 2)
+            }.frame(width: animatedValue,
+                    height: animatedValue)
+            .offset(x: 0, y: -35)
+            VStack {
+                SELogo()
+                AudioSlider(time: time, audioPlayer: audioPlayer)
+                
+                PlaybackControls(audioPlayer: audioPlayer, isPlaying: isPlaying)
+                
+                EffectControls(audioPlayer: audioPlayer, woof: woofer)
+                
+            }
+        }
+    }
+}
+
 struct SELogo: View { //view
     
     var body: some View {
@@ -177,7 +184,7 @@ struct AudioSlider: View {
 
 struct PlaybackControls: View { //View
     var audioPlayer: AVAudioPlayer
-    var paused: Bool = true
+    var isPlaying: Bool = false
     
     var body: some View {
         HStack {
@@ -187,18 +194,16 @@ struct PlaybackControls: View { //View
                 Image(systemName: "gobackward.10").foregroundColor(Color("MainColor")).font(.system(size: 60))
             }.padding(.trailing, 15)
             
-            ZStack{
-                Button(action: {
-                    //Play / Pause audio
-                    
-                    //isPlaying stays on even when paused
-                        audioPlayer.play()
-                    
-                }) {
-                    Image(systemName:  audioPlayback(isPlaying: audioPlayer.isPlaying))
-                        .foregroundColor(Color("hotpink")).font(.system(size: 60))
-                }.padding(.trailing, 15)
-            }
+            Button(action: {
+                //Play / Pause audio
+                
+                //isPlaying stays on even when paused
+                audioPlayer.play()
+                
+            }) {
+                Image(systemName:  audioPlayback(isPlaying: isPlaying))
+                    .foregroundColor(Color("hotpink")).font(.system(size: 60))
+            }.padding(.trailing, 15)
             
             Button(action: {
                 //fast forward song 15 seconds
@@ -210,7 +215,7 @@ struct PlaybackControls: View { //View
     }
     
     func audioPlayback(isPlaying: Bool) -> String { return isPlaying ? "pause.circle.fill" : "play.circle.fill" }
-
+    
 }
 
 struct EffectControls: View { //View
@@ -236,7 +241,7 @@ struct EffectControls: View { //View
                 //reverb
                 audioPlayer.setVolume(0.0, fadeDuration: 0.0)
             }) {
-                Image(systemName: "speaker").font(.system(size: 60)).padding(/*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/).foregroundColor(Color("hotpink"))
+                Image(systemName: "speaker.slash").font(.system(size: 60)).padding(/*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/).foregroundColor(Color("hotpink"))
             }
             //DOES SOMETHING FUN
             Button(action: {

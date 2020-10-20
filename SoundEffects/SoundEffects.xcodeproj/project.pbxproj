@@ -19,7 +19,6 @@
 		F63E405F253552EF000A9CCB /* 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F63E405E253552EE000A9CCB /* 01.mp3 */; };
 		F63E406425355328000A9CCB /* 02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F63E406325355328000A9CCB /* 02.mp3 */; };
 		F652BE75252C2F23005AEB76 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = F652BE74252C2F23005AEB76 /* AudioKit */; };
-		F65E002D2538029600F9499B /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65E002C2538029600F9499B /* RecordView.swift */; };
 		F6A09C43252573B80062D295 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F6A09C42252573B80062D295 /* ComposableArchitecture */; };
 		F6EC80602532C2B00059C754 /* JACKBOYS.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F6EC805F2532C2AF0059C754 /* JACKBOYS.mp3 */; };
 /* End PBXBuildFile section */
@@ -59,7 +58,6 @@
 		F634DA8F251C29BA00FA2D86 /* EffectsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsModel.swift; sourceTree = "<group>"; };
 		F63E405E253552EE000A9CCB /* 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 01.mp3; path = "../../A 2NiNG4K/A 2NiNG4K/Audio Files/01.mp3"; sourceTree = "<group>"; };
 		F63E406325355328000A9CCB /* 02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 02.mp3; path = "../../A 2NiNG4K/A 2NiNG4K/Audio Files/02.mp3"; sourceTree = "<group>"; };
-		F65E002C2538029600F9499B /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
 		F6EC805F2532C2AF0059C754 /* JACKBOYS.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = JACKBOYS.mp3; path = "../../../../../Music/iTunes/iTunes Media/Music/JACKBOYS/JACKBOYS/JACKBOYS.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,7 +127,6 @@
 				F634DA66251C28B200FA2D86 /* ContentView.swift */,
 				F634DA8F251C29BA00FA2D86 /* EffectsModel.swift */,
 				F615CB51252431C000E29F33 /* AudioModel.swift */,
-				F65E002C2538029600F9499B /* RecordView.swift */,
 				F634DA68251C28B300FA2D86 /* Assets.xcassets */,
 				F634DA6D251C28B300FA2D86 /* Info.plist */,
 				F634DA6A251C28B300FA2D86 /* Preview Content */,
@@ -307,7 +304,6 @@
 				F634DA90251C29BA00FA2D86 /* EffectsModel.swift in Sources */,
 				F634DA67251C28B200FA2D86 /* ContentView.swift in Sources */,
 				F634DA65251C28B200FA2D86 /* SoundEffectsApp.swift in Sources */,
-				F65E002D2538029600F9499B /* RecordView.swift in Sources */,
 				F615CB52252431C000E29F33 /* AudioModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
