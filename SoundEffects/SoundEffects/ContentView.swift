@@ -232,7 +232,7 @@ struct EffectControls: View { //View
             }
             //INCREASE GAIN STATICLY
             Button(action: {
-                audioPlayer.setVolume(0.4, fadeDuration: TimeInterval(3))
+                audioPlayer.setVolume(0.04, fadeDuration: TimeInterval(3))
             }) {
                 Image(systemName: "arrow.down.square").font(.system(size: 60)).padding(10).foregroundColor(Color("hotpink"))
             }
