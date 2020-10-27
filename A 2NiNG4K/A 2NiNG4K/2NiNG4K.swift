@@ -3,6 +3,8 @@
 //  A 2NiNG4K
 //
 //  Main driver class for first iteration of the app
+//  Main goal is to collaborate with Kanye with this.
+//  Possibly create a reality where music is something everyone can offer (to pay with?)
 //
 //  Created by Peter Victoratos on 10/22/20.
 //
@@ -20,6 +22,7 @@ import AVFoundation
 
 //Here is my list of requirements for Stage 1 of 2NiNG4K
 
+//AVAudioEngine
 //AVAudioRecorder (do I just need one or multiple?)
 //AVAudioSession (multiple)
 //Metronome (sound & visualization)
@@ -33,15 +36,37 @@ import AVFoundation
 //I'm going to build this out in one file. Will be presented as a View Struct
     //I may have to go through this again and determine if Audio Units will make more sense
 
+//Audio Engine
+    //FUNX: will have a recording node for each track
+    //FUNX: playback node can encorporate toggled tracks
+    //FUNX: will have a mixing node to not make our ears bleed
+    //L8RFUNX: will have effect nodes it can run through
+
+//Music Library
+        //VIEW: TrackShelf will either be tappable or draggable from top left
+    //FUNX: Core Data to save the songs
+    //FUNX: it needs to store audio in an array to present in TrackShelf
+    //FUNX: It will save data from the audio engine
+    //FUNX: ADD BUTTON also with this, does a quicksave & store (auto names it?)
+
+//Track Shelf
+        //VIEW: Will display all persisted songs as track cards
+        //VIEW: User can flick and pop it open, pushing it back will make the colors dance super quickly to compliment the speed of the flick (wow this is going to be a tough one)
+    //FUNX: choosing a song will open after a save is triggered on the current tracks
+
+//Track Card
+    //VIEW:
+    //FUNX: Track cards will be scrollable & tappable
+
 //Track Struct
-    //Each track should have an AVAudioSession.. can you play multiple at once?
-    //tracks should have a selected/muted/unselected enum (knob cycles through the states)
-    //selected = pink color
-    //unselected = white color
+    //FUNX: have a selected/muted/unselected enum (knob cycles through the states)
+    //if selected it will play, if muted it will play muted, unselected it will stop wherever it is at
+    //selected = knob is pink color
+    //unselected = knob is white color
     //muted = grey color (maybe a gray pink)
 
 //Handle record func
-    //first time user is recording it asks for permission.. ? I feel like this should only be asked once and this permission should save. gotta look into how these permissions are dealt with currently
+    //first time user is recording it asks for permission.. ?
     //after first recording is done, user's permission is not asked for again
     //selecting an empty track will create a new recording session and set the play button to be a record button
 
