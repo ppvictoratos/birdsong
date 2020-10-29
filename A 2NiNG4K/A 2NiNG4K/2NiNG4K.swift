@@ -11,6 +11,14 @@
 
 import AVFoundation
 
+infix operator >>>
+public func >>> <A, B, C>(
+    f: @escaping (A) -> B,
+    g: @escaping (B) -> C
+) -> (A) -> C {
+    return { g(f($0)) }
+}
+
 //Here's an index of some keywords
 
 //Track: a single instance of an audio recording
@@ -92,9 +100,9 @@ class TuningFork {
 
 //can i have a witness?
 
-struct track: TuningFork {
-    
-}
+//struct track: TuningFork {
+//    
+//}
 
 //Track Shelf
 //VIEW: Will display all persisted songs as track cards
