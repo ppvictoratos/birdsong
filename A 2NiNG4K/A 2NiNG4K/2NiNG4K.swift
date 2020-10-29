@@ -81,14 +81,29 @@ struct Greducer<A, B, C> {
 //work must be done in the background thread
 //looping audio must be done in a buffer, handled in completionHandler
 //lastRenderTime needed to play players concurrently
-//A TEST! If you really wanna be sure that you have a perfect sync just use your favorite cd-ripped song.wav in 44.1kHz/16bit.
+
+
+//A TEST! .wav 44.1kHz/16bit.
 //Make a copy of it and load it into an audio editor, inverse the phase and save it as is now.
 //When you now schedule both version at exactly the same startTime (and of course with the same volume/pan settings) you will hear — SILENCE…
+
+
+//if startFramePosition == nil {
+//  audioPlayer.play(at: nil)
+//  startFramePosition = (audioPlayer.lastRenderTime?.sampleTime)!
+//  startTime = AVAudioTime.init(sampleTime: startFramePosition!, atRate: Double(self.mixer.rate))
+//} else {
+//  audioPlayer.play(at: startTime!)
+//}
+
 class TuningFork {
-    private var audioFiles: Array<String> = []
+    //find a way to write audio files and save them locally so that we can retrieve them
+        //use .wav
+    //does xcode allow the simulator to write files to projects?
+    
+    private var audioFiles: Array<String> = ["01.mp3", "02.mp3", "10.mp3", "16.mp3"]
     private var audioEngine: AVAudioEngine = AVAudioEngine()
     private var mixer: AVAudioMixerNode = AVAudioMixerNode()
-    let fileName: String = "01.mp3"
     
     func Play() {
         // do work in a background thread
@@ -105,7 +120,14 @@ class TuningFork {
                 self.audioEngine.attach(audioPlayer)
                 // Notice the output is the mixer in this case
                 self.audioEngine.connect(audioPlayer, to: self.mixer, format: nil)
-                let fileUrl = NSURL.init(fileURLWithPath: self.fileName.removingPercentEncoding!)
+                let fileUrl = NSURL.init(fileURLWithPath: self.audioFiles[0].removingPercentEncoding!)
+                
+                //how / WHERE do iterate through the audioFiles? i need to make a variable out of this loop that will be grabbed from a song picker. whatever the song picker is set to will distribute the song? which doesnt make sense because each track has its own audio player so for now im just going to have four auio players that map to ech of the audio files
+                //if im feeling privy tomorrow morning i can record audio samples of different tracks
+                
+                //the key tonight is to get them all playing simulataniously
+                
+                //i cannot believe i have this job even though i failed algorithms analysis (almost twice). js
                 
                 // We should probably check if the file exists here ¯\_(ツ)_/¯
                 //            try! AVAudioFile.init(forReading: fileUrl.absoluteURL!)
@@ -123,6 +145,7 @@ class TuningFork {
 
 //i need to make a protocol that includes tuning fork. will it init properly? who knows
 
+
 //can i have a witness?
 
 //so it seems i cant make a witness out of this class above. i do need those inits however
@@ -137,7 +160,6 @@ struct track<A> {
 
 var tracks: [TuningFork] = []
 
-let trackWitness = track<sampleTrack>
 
 //struct track: TuningFork {
 //

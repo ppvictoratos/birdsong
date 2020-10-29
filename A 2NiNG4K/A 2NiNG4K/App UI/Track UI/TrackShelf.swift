@@ -15,12 +15,14 @@ struct TrackShelf: View {
 
 struct TrackCardBoxStyle: GroupBoxStyle {
     func makeBody(configuration: Configuration) -> some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .center) {
             configuration.label
             configuration.content
         }.padding()
         .background(randomEarthTone())
         .clipShape(RoundedRectangle(cornerRadius: 20.0, style: .continuous))
+        .font(.footnote)
+        .offset(x: 0, y: 135.0)
     }
     
     //make these only earth tones
@@ -34,7 +36,7 @@ struct Shelf: View {
         ZStack {
             RoundedRectangle(cornerRadius: 25.0)
                 .accentColor(.accentColor)
-                .frame(width: 300, height: 600, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width: 150, height: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             trackCard()
         }
     }
@@ -46,14 +48,14 @@ struct trackCard: View {
             LazyVGrid(columns: [.init(), .init()]) {
                 ForEach(0..<8) { _ in
                     GroupBox(
-                        label: Label("Song Title", systemImage: "music.note")
+                        label: Label("Title", systemImage: "music.note")
                             .foregroundColor(.white)
                     ) {
                         Text("03:24")
                     }.groupBoxStyle(TrackCardBoxStyle())
                 }
             }.padding()
-        }.background(Color("AccentColor"))
+        }
         .edgesIgnoringSafeArea(.all)
     }
 }
