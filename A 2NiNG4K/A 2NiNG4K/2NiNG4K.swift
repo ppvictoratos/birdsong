@@ -19,6 +19,25 @@ public func >>> <A, B, C>(
     return { g(f($0)) }
 }
 
+struct G<A> { var a: A } // ((A) -> B) -> (G<A>) -> G<B>
+enum   Gnum<A> { case a(A); case b } // ((A) -> B) -> (Gnum<A>) -> Gnum<B>
+struct Gfunc<A> { var a: () -> A } // ((A) -> B) -> (Gfunc<A>) -> Gfunc<B>
+struct Gcontrafunc<A> { var a: (A) -> Void } // ((B) -> A)  -> (Gcontrafunc<A>) -> Gcontrafunc<B>
+struct Gjoinfunc<A>   { var a: (A) -> A } // ((A) -> B) -> ((B) -> A) -> (Gjoinfunc<A>) -> Gjoinfunc<B>
+
+func map<A, B>(
+    _ left: @escaping (B) -> A,
+    _ right: @escaping (A) -> B //last time. why escaping?
+) -> (Gjoinfunc<A>) -> Gjoinfunc<B> {
+    { a in Gjoinfunc(a: (left >>> a.a) >>> right)}
+}
+
+struct Greducer<A, B, C> {
+    var a: (A, B, C) -> (A, Array<B>)
+    var b: (inout A, B, C) -> Array<B>
+}
+
+
 //Here's an index of some keywords
 
 //Track: a single instance of an audio recording
@@ -98,10 +117,30 @@ class TuningFork {
     }
 }
 
+//need to extend the tuning fork to be like customstringconvertible
+    //what special property does the convertible have?
+            //its a protocol
+
+//i need to make a protocol that includes tuning fork. will it init properly? who knows
+
 //can i have a witness?
 
+//so it seems i cant make a witness out of this class above. i do need those inits however
+
+//im sure there's a use for this somewhere..
+
+let sampleTrack = TuningFork()
+
+struct track<A> {
+    let describe: (A) -> TuningFork
+}
+
+var tracks: [TuningFork] = []
+
+let trackWitness = track<sampleTrack>
+
 //struct track: TuningFork {
-//    
+//
 //}
 
 //Track Shelf
