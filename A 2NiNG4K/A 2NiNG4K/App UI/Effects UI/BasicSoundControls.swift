@@ -21,6 +21,7 @@ struct BasicSoundControls: View {
             Image(decorative: metronomeImage!, scale: 0.7, orientation: .up)
                 .padding(.bottom, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
             
+            
         //bpm //bars
         HStack {
             BPMText()

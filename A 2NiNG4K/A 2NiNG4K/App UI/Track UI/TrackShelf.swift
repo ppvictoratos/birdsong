@@ -36,22 +36,15 @@ struct TrackCardBoxStyle: GroupBoxStyle {
 //should be accent color
 struct Shelf: View {
     var body: some View {
-        ZStack {
-            
-            //we need a scroll view here!
-            RoundedRectangle(cornerRadius: 25.0)
-                .accentColor(.accentColor)
-                .frame(width: 150, height: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            trackCard()
-        }
+            trackCards()
     }
 }
 
-struct trackCard: View {
+struct trackCards: View {
     var body: some View {
         ScrollView {
             LazyVGrid(columns: [.init(), .init()]) {
-                ForEach(0..<8) { _ in
+                ForEach(0..<14) { _ in
                     GroupBox(
                         label: Label("Title", systemImage: "music.note")
                             .foregroundColor(.white)
@@ -61,6 +54,7 @@ struct trackCard: View {
                 }
             }.padding()
             .frame(width: 210.0, height: 180, alignment: .center)
+            
         }
         .edgesIgnoringSafeArea(.all)
     }
