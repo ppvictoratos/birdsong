@@ -10,11 +10,10 @@ struct ContentView: View {
     var timeHasPassed = false
     
     var body: some View {
-        //z stack with the track shelf on top of everything
-                //it is offset practically out of the frame other than the bottom which can be tapped to open. user can access the song library from there
+
         ZStack {
             TrackShelf()
-                .offset(x: -60, y: -440.0)
+                .offset(x: -60, y: -505.0)
             //should animate up and down on tap
             VStack {
                 HStack {
@@ -27,15 +26,19 @@ struct ContentView: View {
                     
                     //add song button +
                     Button(action: {
-                        print("new song")
+                        print("autosave. make new song")
                     }) {
                         //new song, saves song locally
                         //or maybe this is a button that expands into other options..? profile, effects etc
-                        
                         Image(systemName: "plus")
                     }
                     Spacer()
-                }.offset(x: 0, y: -260)
+                }.padding(.top, 75)
+                                
+                TrackSlider(times: [1.0, 25.0, 25.0, 50.0])
+                    .padding()
+                
+                BasicSoundControls()
             }
                     //transparent backed group box consisting of 4 tracks with custom knobs and with some type of color varient
                         //has + underneath. on tap { add tracks }

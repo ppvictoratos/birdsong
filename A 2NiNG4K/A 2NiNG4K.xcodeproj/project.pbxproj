@@ -19,9 +19,10 @@
 		F63E404C25353EFC000A9CCB /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = F63E404B25353EFC000A9CCB /* Algorithms */; };
 		F63E405825354083000A9CCB /* AudioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E405725354083000A9CCB /* AudioModel.swift */; };
 		F63E405B253540A1000A9CCB /* EffectsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E405A253540A1000A9CCB /* EffectsModel.swift */; };
-		F69A70E02542212E00C18D02 /* TrackSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69A70DF2542212E00C18D02 /* TrackSlider.swift */; };
 		F69A70E32542283700C18D02 /* 2NiNG4K.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69A70E22542283700C18D02 /* 2NiNG4K.swift */; };
 		F6AE92A52547AEF800624C45 /* TrackShelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AE92A42547AEF800624C45 /* TrackShelf.swift */; };
+		F6E81936254F90FF00C5ACE4 /* TrackSliders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E81935254F90FF00C5ACE4 /* TrackSliders.swift */; };
+		F6E8193D254F968E00C5ACE4 /* BasicSoundControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E8193C254F968E00C5ACE4 /* BasicSoundControls.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,9 +38,10 @@
 		F63E404325353D9D000A9CCB /* 02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 02.mp3; sourceTree = "<group>"; };
 		F63E405725354083000A9CCB /* AudioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioModel.swift; sourceTree = "<group>"; };
 		F63E405A253540A1000A9CCB /* EffectsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsModel.swift; sourceTree = "<group>"; };
-		F69A70DF2542212E00C18D02 /* TrackSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackSlider.swift; sourceTree = "<group>"; };
 		F69A70E22542283700C18D02 /* 2NiNG4K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2NiNG4K.swift; sourceTree = "<group>"; };
 		F6AE92A42547AEF800624C45 /* TrackShelf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackShelf.swift; sourceTree = "<group>"; };
+		F6E81935254F90FF00C5ACE4 /* TrackSliders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackSliders.swift; sourceTree = "<group>"; };
+		F6E8193C254F968E00C5ACE4 /* BasicSoundControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicSoundControls.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +138,7 @@
 		F63E405225353FDC000A9CCB /* Track UI */ = {
 			isa = PBXGroup;
 			children = (
-				F69A70DF2542212E00C18D02 /* TrackSlider.swift */,
+				F6E81935254F90FF00C5ACE4 /* TrackSliders.swift */,
 				F6AE92A42547AEF800624C45 /* TrackShelf.swift */,
 			);
 			path = "Track UI";
@@ -145,6 +147,7 @@
 		F63E405325353FEA000A9CCB /* Effects UI */ = {
 			isa = PBXGroup;
 			children = (
+				F6E8193C254F968E00C5ACE4 /* BasicSoundControls.swift */,
 			);
 			path = "Effects UI";
 			sourceTree = "<group>";
@@ -237,12 +240,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6E81936254F90FF00C5ACE4 /* TrackSliders.swift in Sources */,
 				F63E402D25353A66000A9CCB /* ContentView.swift in Sources */,
+				F6E8193D254F968E00C5ACE4 /* BasicSoundControls.swift in Sources */,
 				F69A70E32542283700C18D02 /* 2NiNG4K.swift in Sources */,
 				F6AE92A52547AEF800624C45 /* TrackShelf.swift in Sources */,
 				F63E402B25353A66000A9CCB /* A_2NiNG4KApp.swift in Sources */,
 				F63E405B253540A1000A9CCB /* EffectsModel.swift in Sources */,
-				F69A70E02542212E00C18D02 /* TrackSlider.swift in Sources */,
 				F63E405825354083000A9CCB /* AudioModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

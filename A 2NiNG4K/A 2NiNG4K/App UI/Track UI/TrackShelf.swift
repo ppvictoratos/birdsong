@@ -22,10 +22,13 @@ struct TrackCardBoxStyle: GroupBoxStyle {
         .background(randomEarthTone())
         .clipShape(RoundedRectangle(cornerRadius: 20.0, style: .continuous))
         .font(.footnote)
-        .offset(x: 0, y: 135.0)
+        .offset(x: 0, y: 265.0)
+        
+        //i need to fit the body into a shelf (scroll view)
+        //or for now, how do I shrink the space in between?
     }
     
-    //make these only earth tones
+    //make these only earth tones, how can i generate "random" colors that fall into a certain range?
     func randomEarthTone() -> Color { return Color("Earth1") }
 }
 
@@ -34,6 +37,8 @@ struct TrackCardBoxStyle: GroupBoxStyle {
 struct Shelf: View {
     var body: some View {
         ZStack {
+            
+            //we need a scroll view here!
             RoundedRectangle(cornerRadius: 25.0)
                 .accentColor(.accentColor)
                 .frame(width: 150, height: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -55,6 +60,7 @@ struct trackCard: View {
                     }.groupBoxStyle(TrackCardBoxStyle())
                 }
             }.padding()
+            .frame(width: 210.0, height: 180, alignment: .center)
         }
         .edgesIgnoringSafeArea(.all)
     }
@@ -63,7 +69,6 @@ struct trackCard: View {
 struct TrackShelf_Previews: PreviewProvider {
     static var previews: some View {
         TrackShelf()
-            .preferredColorScheme(.dark)
     }
 }
 
