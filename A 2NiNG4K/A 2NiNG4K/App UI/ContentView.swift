@@ -8,14 +8,11 @@ import SwiftUI
 
 struct ContentView: View {
     var timeHasPassed = false
+    @State private var dropdown = false
     
     var body: some View {
         
         ZStack {
-            TrackShelf()
-                .offset(x: -90, y: -565.0)
-            
-            //should animate up and down on tap
             VStack {
                 HStack {
                     //song title that fades into metadata
@@ -34,10 +31,8 @@ struct ContentView: View {
                         }
                         
                         Button(action: {
-                            print("open track shelf")
+                            self.dropdown.toggle()
                         }) {
-                            //new song, saves song locally
-                            //or maybe this is a button that expands into other options..? profile, effects etc
                             Image(systemName: "book")
                         }
                     }
@@ -47,7 +42,7 @@ struct ContentView: View {
                 TrackSlider(times: [1.0, 25.0, 25.0, 50.0])
                     .padding()
                 
-                BasicSoundControls()
+                BasicSoundControls(volume: 0.5)
             }
             //transparent backed group box consisting of 4 tracks with custom knobs and with some type of color varient
             //has + underneath. on tap { add tracks }
@@ -58,12 +53,16 @@ struct ContentView: View {
             //an h stack with a bar in between the amount of bars the tracks have followed by the BPM it is at
             
             //an h stack that has the record/play/pause button along with skipping buttons in each direction by BARS
+            TrackShelf()
+                .offset(x: -90, y: dropdown ? -200 : -565.0)
+                .animation(.easeInOut(duration: 1.0))
         }
         
         //we do need an add track button too
         
         //im not sure what things i am allowed to init outside of the view for it to work properly ????
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

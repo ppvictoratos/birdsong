@@ -11,6 +11,7 @@ import AVFoundation
 struct BasicSoundControls: View {
     var audioPlayer = AVAudioPlayer()
     let metronomeImage = UIImage(systemName: "metronome")?.cgImage
+    @State var volume: Float
     
     var body: some View {
         
@@ -31,6 +32,12 @@ struct BasicSoundControls: View {
         
         //-4 bars, pause/record/play, +4 bars
         PlaybackControls(audioPlayer: audioPlayer)
+            
+            //master volume
+            Slider(value: Binding(get: {volume}, set: {
+                (newValue) in
+                volume = newValue
+            })).padding()
             
             Spacer()
         }
@@ -99,6 +106,6 @@ struct PlaybackControls: View { //View
 
 struct BasicSoundControls_Previews: PreviewProvider {
     static var previews: some View {
-        BasicSoundControls()
+        BasicSoundControls(volume: 0.5)
     }
 }
