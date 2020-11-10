@@ -9,10 +9,6 @@ import SwiftUI
 import CoreAudioKit
 import AVFoundation
 
-//make a way to start/stop animation
-
-//make a way to toggle pause play and update button
-
 let urlB = Bundle.main.path(forResource: "02", ofType: "mp3")
 
 struct ContentView: View {
