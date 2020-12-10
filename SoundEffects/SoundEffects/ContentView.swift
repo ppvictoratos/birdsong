@@ -250,6 +250,17 @@ struct EffectControls: View { //View
     }
 }
 
+struct viewbis : View {
+    var size: CGFloat
+    var size2: CGFloat = 0.3
+    
+    var body: some View {
+        Circle()
+            .scaleEffect(size2)
+            .foregroundColor(Color("hotpink"))
+    }
+}
+
 //have local sound take a sound, set a volume and play it, return the sound. that sound can be further edited through chaining
 
 //for something fun: functionally compose multiple effects
@@ -277,9 +288,6 @@ struct EffectControls: View { //View
 // MARK: - PREVIEWS
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            ContentView()
-                .preferredColorScheme(.dark)
-        }
+        viewbis(size: 0.2)
     }
 }

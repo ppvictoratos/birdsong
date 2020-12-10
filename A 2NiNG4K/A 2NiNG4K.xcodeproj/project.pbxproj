@@ -19,18 +19,8 @@
 		F63E404C25353EFC000A9CCB /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = F63E404B25353EFC000A9CCB /* Algorithms */; };
 		F63E405825354083000A9CCB /* AudioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E405725354083000A9CCB /* AudioModel.swift */; };
 		F63E405B253540A1000A9CCB /* EffectsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E405A253540A1000A9CCB /* EffectsModel.swift */; };
-		F64A9A812554418400B54897 /* AudioRecorderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64A9A802554418400B54897 /* AudioRecorderClient.swift */; };
-		F64A9A84255441A200B54897 /* LiveAudioRecorderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64A9A83255441A200B54897 /* LiveAudioRecorderClient.swift */; };
-		F64A9A87255441C600B54897 /* MockAudioRecorderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64A9A86255441C600B54897 /* MockAudioRecorderClient.swift */; };
-		F64A9A8A255441DD00B54897 /* AudioPlayerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64A9A89255441DD00B54897 /* AudioPlayerClient.swift */; };
-		F64A9A8D2554420600B54897 /* LiveAudioPlayerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64A9A8C2554420600B54897 /* LiveAudioPlayerClient.swift */; };
-		F64A9A902554421F00B54897 /* MockAudioPlayerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64A9A8F2554421F00B54897 /* MockAudioPlayerClient.swift */; };
 		F69A70E32542283700C18D02 /* 2NiNG4K.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69A70E22542283700C18D02 /* 2NiNG4K.swift */; };
 		F6AE92A52547AEF800624C45 /* TrackShelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AE92A42547AEF800624C45 /* TrackShelf.swift */; };
-		F6B359DF2553983600DC708E /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B359DE2553983600DC708E /* Helpers.swift */; };
-		F6B359E32553986000DC708E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B359E22553986000DC708E /* SceneDelegate.swift */; };
-		F6B359E62553994A00DC708E /* VoiceMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B359E52553994A00DC708E /* VoiceMemo.swift */; };
-		F6B359E92553998700DC708E /* VoiceMemos.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B359E82553998700DC708E /* VoiceMemos.swift */; };
 		F6E81936254F90FF00C5ACE4 /* TrackSliders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E81935254F90FF00C5ACE4 /* TrackSliders.swift */; };
 		F6E8193D254F968E00C5ACE4 /* BasicSoundControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E8193C254F968E00C5ACE4 /* BasicSoundControls.swift */; };
 /* End PBXBuildFile section */
@@ -48,18 +38,8 @@
 		F63E404325353D9D000A9CCB /* 02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 02.mp3; sourceTree = "<group>"; };
 		F63E405725354083000A9CCB /* AudioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioModel.swift; sourceTree = "<group>"; };
 		F63E405A253540A1000A9CCB /* EffectsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsModel.swift; sourceTree = "<group>"; };
-		F64A9A802554418400B54897 /* AudioRecorderClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderClient.swift; sourceTree = "<group>"; };
-		F64A9A83255441A200B54897 /* LiveAudioRecorderClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveAudioRecorderClient.swift; sourceTree = "<group>"; };
-		F64A9A86255441C600B54897 /* MockAudioRecorderClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAudioRecorderClient.swift; sourceTree = "<group>"; };
-		F64A9A89255441DD00B54897 /* AudioPlayerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerClient.swift; sourceTree = "<group>"; };
-		F64A9A8C2554420600B54897 /* LiveAudioPlayerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveAudioPlayerClient.swift; sourceTree = "<group>"; };
-		F64A9A8F2554421F00B54897 /* MockAudioPlayerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAudioPlayerClient.swift; sourceTree = "<group>"; };
 		F69A70E22542283700C18D02 /* 2NiNG4K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2NiNG4K.swift; sourceTree = "<group>"; };
 		F6AE92A42547AEF800624C45 /* TrackShelf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackShelf.swift; sourceTree = "<group>"; };
-		F6B359DE2553983600DC708E /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		F6B359E22553986000DC708E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F6B359E52553994A00DC708E /* VoiceMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMemo.swift; sourceTree = "<group>"; };
-		F6B359E82553998700DC708E /* VoiceMemos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMemos.swift; sourceTree = "<group>"; };
 		F6E81935254F90FF00C5ACE4 /* TrackSliders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackSliders.swift; sourceTree = "<group>"; };
 		F6E8193C254F968E00C5ACE4 /* BasicSoundControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicSoundControls.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,7 +76,6 @@
 		F63E402925353A66000A9CCB /* A 2NiNG4K */ = {
 			isa = PBXGroup;
 			children = (
-				F6B359DD2553980D00DC708E /* PF Memo Recorder */,
 				F63E405125353FD2000A9CCB /* App UI */,
 				F63E404F25353F5F000A9CCB /* Audio Model */,
 				F63E404E25353F49000A9CCB /* Audio Files */,
@@ -180,39 +159,6 @@
 			path = "Visualizer UI";
 			sourceTree = "<group>";
 		};
-		F6B359DD2553980D00DC708E /* PF Memo Recorder */ = {
-			isa = PBXGroup;
-			children = (
-				F6B359DE2553983600DC708E /* Helpers.swift */,
-				F6B359E22553986000DC708E /* SceneDelegate.swift */,
-				F6B359E52553994A00DC708E /* VoiceMemo.swift */,
-				F6B359E82553998700DC708E /* VoiceMemos.swift */,
-				F6B359ED255399A000DC708E /* AudioRecorderClient */,
-				F6B359EB2553999300DC708E /* AudioPlayerClient */,
-			);
-			path = "PF Memo Recorder";
-			sourceTree = "<group>";
-		};
-		F6B359EB2553999300DC708E /* AudioPlayerClient */ = {
-			isa = PBXGroup;
-			children = (
-				F64A9A89255441DD00B54897 /* AudioPlayerClient.swift */,
-				F64A9A8C2554420600B54897 /* LiveAudioPlayerClient.swift */,
-				F64A9A8F2554421F00B54897 /* MockAudioPlayerClient.swift */,
-			);
-			path = AudioPlayerClient;
-			sourceTree = "<group>";
-		};
-		F6B359ED255399A000DC708E /* AudioRecorderClient */ = {
-			isa = PBXGroup;
-			children = (
-				F64A9A802554418400B54897 /* AudioRecorderClient.swift */,
-				F64A9A83255441A200B54897 /* LiveAudioRecorderClient.swift */,
-				F64A9A86255441C600B54897 /* MockAudioRecorderClient.swift */,
-			);
-			path = AudioRecorderClient;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -294,21 +240,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F64A9A8A255441DD00B54897 /* AudioPlayerClient.swift in Sources */,
 				F6E81936254F90FF00C5ACE4 /* TrackSliders.swift in Sources */,
-				F64A9A812554418400B54897 /* AudioRecorderClient.swift in Sources */,
-				F6B359E62553994A00DC708E /* VoiceMemo.swift in Sources */,
-				F64A9A902554421F00B54897 /* MockAudioPlayerClient.swift in Sources */,
-				F64A9A84255441A200B54897 /* LiveAudioRecorderClient.swift in Sources */,
 				F63E402D25353A66000A9CCB /* ContentView.swift in Sources */,
 				F6E8193D254F968E00C5ACE4 /* BasicSoundControls.swift in Sources */,
 				F69A70E32542283700C18D02 /* 2NiNG4K.swift in Sources */,
-				F64A9A8D2554420600B54897 /* LiveAudioPlayerClient.swift in Sources */,
-				F6B359DF2553983600DC708E /* Helpers.swift in Sources */,
-				F6B359E92553998700DC708E /* VoiceMemos.swift in Sources */,
-				F6B359E32553986000DC708E /* SceneDelegate.swift in Sources */,
 				F6AE92A52547AEF800624C45 /* TrackShelf.swift in Sources */,
-				F64A9A87255441C600B54897 /* MockAudioRecorderClient.swift in Sources */,
 				F63E402B25353A66000A9CCB /* A_2NiNG4KApp.swift in Sources */,
 				F63E405B253540A1000A9CCB /* EffectsModel.swift in Sources */,
 				F63E405825354083000A9CCB /* AudioModel.swift in Sources */,
