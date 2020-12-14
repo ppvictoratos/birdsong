@@ -19,11 +19,12 @@ import Metal
         //it then needs to define these functions:
             // • magnitudeSquared, scale, zero = AnimatableVector(), +, -, +=, -=
 
-func AnimatableVectorPF<A, B, C>(_ f: @escaping (A, B) -> C) where A: FloatingPoint, B: FloatingPoint, C: FloatingPoint{
-    
-    
-    
-}
+//what will this generic version do?
+    //conform to the VectorArithmetic functions
+    //
+
+func AnimatableVectorPF<A: VectorArithmetic, B: FloatingPoint, C: FloatingPoint>(_ f: @escaping (A, B) -> C){ }
+
 
 
 
@@ -59,6 +60,19 @@ struct AnimatableVector: VectorArithmetic {
         self.recomputeMagnitude()
     }
     
+//    func computeMagnitude()->Double {
+//         // compute square magnitued of the vector
+//         // = sum of all squared values
+//         var sum: Double = 0.0
+//
+//         for index in 0..<self.values.count {
+//             sum += self.values[index]*self.values[index]
+//         }
+//
+//         return Double(sum)
+//     }
+    
+    // for index in 0..<self.values.count { sum += self.values[index]*self.values[index]} return Double(sum)
     func computeMagnitudePF() -> Double {
         return values.reduce(Double(), { magnitude, val in magnitude + (val * val)})
     }
@@ -69,6 +83,15 @@ struct AnimatableVector: VectorArithmetic {
     
     // MARK: VectorArithmetic
     var magnitudeSquared: Double // squared magnitude of the vector
+    
+//    mutating func scale(by rhs: Double) {
+//        // scale vector with a scalar
+//        // = each value is multiplied by rhs
+//        for index in 0..<values.count {
+//            values[index] *= rhs
+//        }
+//        self.magnitudeSquared = self.computeMagnitude()
+//    }
     
     mutating func scale(by rhs: Double) {
         _ = values.map { $0 * rhs}
@@ -217,25 +240,31 @@ let sizeY = 10
 func generateOrigins(count: Int)->[CGPoint] {
     var arr = [CGPoint]()
     for _ in 0..<count {
+        //x: Double.random(in: 0...1), y: Double(random(in: 0...1)
         arr.append(CGPoint(x: Double.random(in: 0...1), y: Double.random(in: 0...1)))
     }
     return arr
 }
 
 struct ContentView: View {
-    static let count = 500
+    static let count = 3
     @State var field: VectorField = VectorField(sizeX: sizeX, sizeY: sizeY, range: 0...2*Double.pi)
     @State var startX: CGFloat = 0.5
     @State var startY: CGFloat = 0.5
     let startingPoints = generateOrigins(count: Self.count)
     
     func animate() {
-        let duration = 3.0
+        //let duration = 3.0
+        let duration = 0.001
         withAnimation(.easeInOut(duration: duration)) {
+            NSLog("field in")
             self.field = VectorField(sizeX: sizeX, sizeY: sizeY, range: 0...2*Double.pi)
+            NSLog("field out ...")
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + duration*0.3) {
+        // + duration*0.3
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
             self.animate()
+            NSLog("animate")
         }
     }
     
@@ -271,7 +300,6 @@ struct ContentView: View {
             .drawingGroup()
             .offset(x: geometry.size.width/10/2, y: geometry.size.height/10/2)
         }
-        
         
         .onTapGesture {
             self.animate()
