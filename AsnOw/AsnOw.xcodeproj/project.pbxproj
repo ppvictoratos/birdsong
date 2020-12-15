@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F642C2A725883BDF007583D1 /* PureSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = F642C2A625883BDF007583D1 /* PureSwiftUI */; };
 		F6DAC0722586DF77003DF40D /* AsnOwApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DAC0712586DF77003DF40D /* AsnOwApp.swift */; };
 		F6DAC0742586DF77003DF40D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DAC0732586DF77003DF40D /* ContentView.swift */; };
 		F6DAC0762586DF79003DF40D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6DAC0752586DF79003DF40D /* Assets.xcassets */; };
 		F6DAC0792586DF79003DF40D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6DAC0782586DF79003DF40D /* Preview Assets.xcassets */; };
-		F6DAC0832587038F003DF40D /* PureSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = F6DAC0822587038F003DF40D /* PureSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6DAC0832587038F003DF40D /* PureSwiftUI in Frameworks */,
+				F642C2A725883BDF007583D1 /* PureSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +88,7 @@
 			);
 			name = AsnOw;
 			packageProductDependencies = (
-				F6DAC0822587038F003DF40D /* PureSwiftUI */,
+				F642C2A625883BDF007583D1 /* PureSwiftUI */,
 			);
 			productName = AsnOw;
 			productReference = F6DAC06E2586DF77003DF40D /* AsnOw.app */;
@@ -118,7 +118,7 @@
 			);
 			mainGroup = F6DAC0652586DF77003DF40D;
 			packageReferences = (
-				F6DAC0812587038F003DF40D /* XCRemoteSwiftPackageReference "pure-swift-ui" */,
+				F642C2A525883BDF007583D1 /* XCRemoteSwiftPackageReference "pure-swift-ui" */,
 			);
 			productRefGroup = F6DAC06F2586DF77003DF40D /* Products */;
 			projectDirPath = "";
@@ -157,7 +157,7 @@
 		F6DAC07B2586DF79003DF40D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -218,7 +218,7 @@
 		F6DAC07C2586DF79003DF40D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -338,7 +338,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F6DAC0812587038F003DF40D /* XCRemoteSwiftPackageReference "pure-swift-ui" */ = {
+		F642C2A525883BDF007583D1 /* XCRemoteSwiftPackageReference "pure-swift-ui" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/CodeSlicing/pure-swift-ui";
 			requirement = {
@@ -349,9 +349,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F6DAC0822587038F003DF40D /* PureSwiftUI */ = {
+		F642C2A625883BDF007583D1 /* PureSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F6DAC0812587038F003DF40D /* XCRemoteSwiftPackageReference "pure-swift-ui" */;
+			package = F642C2A525883BDF007583D1 /* XCRemoteSwiftPackageReference "pure-swift-ui" */;
 			productName = PureSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
