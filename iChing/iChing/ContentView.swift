@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 //TODO: Make CoinFlipResult an H or T depending on flip
+//TODO: Make each coin flip draw the corresponding hexagram line
 
 //TODO: Implement TCA
 
@@ -18,6 +19,7 @@ import SwiftUI
     //TODO: Change button to say
 
 //TODO: Make CoinFlip a 3D object that the user can interact with
+    //TODO: Once flipped, it becomes three separate coins
 //TODO: Make the result of coin flip update the CoinFlipResult
 
 struct FlipEffect: GeometryEffect {
