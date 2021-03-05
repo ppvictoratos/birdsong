@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F611FAA625EDBEDF00226718 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F611FAA525EDBEDF00226718 /* ComposableArchitecture */; };
+		F611FAAD25EDC66700226718 /* TCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F611FAAC25EDC66700226718 /* TCA.swift */; };
 		F6807E6225DB5EB900D177D8 /* iChingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6807E6125DB5EB900D177D8 /* iChingApp.swift */; };
 		F6807E6425DB5EB900D177D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6807E6325DB5EB900D177D8 /* ContentView.swift */; };
 		F6807E6625DB5EBC00D177D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6807E6525DB5EBC00D177D8 /* Assets.xcassets */; };
@@ -33,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F611FAAC25EDC66700226718 /* TCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCA.swift; sourceTree = "<group>"; };
 		F6807E5E25DB5EB900D177D8 /* iChing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6807E6125DB5EB900D177D8 /* iChingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iChingApp.swift; sourceTree = "<group>"; };
 		F6807E6325DB5EB900D177D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F611FAA625EDBEDF00226718 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				F6807E6125DB5EB900D177D8 /* iChingApp.swift */,
+				F611FAAC25EDC66700226718 /* TCA.swift */,
 				F6807E6325DB5EB900D177D8 /* ContentView.swift */,
 				F6807E6525DB5EBC00D177D8 /* Assets.xcassets */,
 				F6807E6A25DB5EBC00D177D8 /* Info.plist */,
@@ -146,6 +151,9 @@
 			dependencies = (
 			);
 			name = iChing;
+			packageProductDependencies = (
+				F611FAA525EDBEDF00226718 /* ComposableArchitecture */,
+			);
 			productName = iChing;
 			productReference = F6807E5E25DB5EB900D177D8 /* iChing.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +225,9 @@
 				Base,
 			);
 			mainGroup = F6807E5525DB5EB900D177D8;
+			packageReferences = (
+				F611FAA425EDBEDF00226718 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = F6807E5F25DB5EB900D177D8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -260,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6807E6425DB5EB900D177D8 /* ContentView.swift in Sources */,
+				F611FAAD25EDC66700226718 /* TCA.swift in Sources */,
 				F6807E6225DB5EB900D177D8 /* iChingApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,6 +592,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F611FAA425EDBEDF00226718 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.15.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F611FAA525EDBEDF00226718 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F611FAA425EDBEDF00226718 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F6807E5625DB5EB900D177D8 /* Project object */;
 }

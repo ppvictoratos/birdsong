@@ -8,8 +8,9 @@
 import Foundation
 import SwiftUI
 
-//TODO: Make CoinFlipResult an H or T depending on flip
 //TODO: Make each coin flip draw the corresponding hexagram line
+
+//TODO: How to make it wrap at 9 dots?
 
 //TODO: Implement TCA
 
@@ -20,7 +21,47 @@ import SwiftUI
 
 //TODO: Make CoinFlip a 3D object that the user can interact with
     //TODO: Once flipped, it becomes three separate coins
-//TODO: Make the result of coin flip update the CoinFlipResult
+//TODO: Make the result of coin flip update the CoinFlipResults
+
+//TODO: Make CoinFlipResult an H or T depending on flip
+    //return an array of strings? map could be useful here
+struct CustomDotView: View {
+    let dots: Int
+    
+    private let dotDimension: CGFloat = 8.0
+    private let rows = 2
+    private let dotsPerRow = 9
+    private let heightSpacing: CGFloat = 8.0
+    
+    private var contentHeight: CGFloat {
+        let totalRowHeight = CGFloat(rows) * dotDimension
+        let totalSPacing = CGFloat(rows - 1) * heightSpacing
+        return totalRowHeight + totalSPacing
+    }
+    
+    var body: some View {
+        GeometryReader { proxy in
+            VStack(spacing: heightSpacing) {
+                ForEach(0 ..< rows, id: \.self) { row in
+                    HStack {
+                        ForEach(0 ..< dotsPerRow, id: \.self) { dot in
+                            Circle().foregroundColor(Color.accentColor)
+                                .frame(width: dotDimension)
+                                .opacity(((row * dotsPerRow) + dot) < dots ? 1.0 : 0.0)
+                        }
+                    }
+                    .frame(width: proxy.size.width, height: dotDimension)
+                }
+            }
+        }
+        .frame(height: contentHeight)
+    }
+}
+
+
+func flipCoin() -> String {
+    return String(Bool.random())
+}
 
 struct FlipEffect: GeometryEffect {
     
@@ -86,7 +127,7 @@ struct CoinFlip: View {
         return VStack {
             Spacer()
             Image(flipped ? "quarterFront" : images[imgIndex]).resizable()
-                .frame(width: 320, height: 320)
+                .frame(width: 280, height: 280)
                 .modifier(FlipEffect(flipped: binding, angle: animate3d ? 360 : 0, axis: (x: 1, y: 5)))
                 .rotationEffect(Angle(degrees: rotate ? 0 : 360))
                 .onAppear {
@@ -139,7 +180,7 @@ struct CoinFlipResultsTracker: View {
                             alignment: .leading)
         }
     }
-    @State private var coinCount: Int = 8
+    @State private var coinCount: Int = 17
     
     var body: some View {
         HStack(spacing: 12) {
@@ -153,13 +194,12 @@ struct CoinFlipResultsTracker: View {
     }
 }
 
-func nineRoulette() -> Int {
-    
-    return 8
-}
-
 struct ContentView: View {
     @State var coins = 0
+    @State private var dotCount = 0
+    
+    private let dotRange = 0 ... 18
+    
     
     var body: some View {
         
@@ -169,9 +209,19 @@ struct ContentView: View {
                 .padding()
                 .font(.largeTitle)
             
-            CoinFlipResultsTracker(coins: coins)
+            CustomDotView(dots: dotCount)
+                .accentColor(Color.green)
+                .animation(.easeInOut)
+            
+            Spacer()
             
             CoinFlip()
+            
+            Spacer()
+            
+            Stepper("Dots", value: $dotCount, in: dotRange)
+                .padding(.horizontal, 16.0)
+                .padding(.bottom, 40.0)
             
             Button("Flip!") {
                 coins = coins + 1

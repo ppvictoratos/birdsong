@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F611FABF25EE9C0000226718 /* XUMO_Programming_HelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F611FABE25EE9C0000226718 /* XUMO_Programming_HelperApp.swift */; };
+		F611FAC125EE9C0000226718 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F611FAC025EE9C0000226718 /* ContentView.swift */; };
+		F611FAC325EE9C0300226718 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F611FAC225EE9C0300226718 /* Assets.xcassets */; };
+		F611FAC625EE9C0300226718 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F611FAC525EE9C0300226718 /* Preview Assets.xcassets */; };
+		F611FAD225EE9C0400226718 /* XUMO_Programming_HelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F611FAD125EE9C0400226718 /* XUMO_Programming_HelperTests.swift */; };
+		F611FADD25EE9C0400226718 /* XUMO_Programming_HelperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F611FADC25EE9C0400226718 /* XUMO_Programming_HelperUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F611FACE25EE9C0400226718 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F611FAB325EE9C0000226718 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F611FABA25EE9C0000226718;
+			remoteInfo = "XUMO Programming Helper";
+		};
+		F611FAD925EE9C0400226718 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F611FAB325EE9C0000226718 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F611FABA25EE9C0000226718;
+			remoteInfo = "XUMO Programming Helper";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F611FABB25EE9C0000226718 /* XUMO Programming Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XUMO Programming Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F611FABE25EE9C0000226718 /* XUMO_Programming_HelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XUMO_Programming_HelperApp.swift; sourceTree = "<group>"; };
+		F611FAC025EE9C0000226718 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F611FAC225EE9C0300226718 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F611FAC525EE9C0300226718 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F611FAC725EE9C0300226718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F611FAC825EE9C0300226718 /* XUMO_Programming_Helper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XUMO_Programming_Helper.entitlements; sourceTree = "<group>"; };
+		F611FACD25EE9C0400226718 /* XUMO Programming HelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "XUMO Programming HelperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F611FAD125EE9C0400226718 /* XUMO_Programming_HelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XUMO_Programming_HelperTests.swift; sourceTree = "<group>"; };
+		F611FAD325EE9C0400226718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F611FAD825EE9C0400226718 /* XUMO Programming HelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "XUMO Programming HelperUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F611FADC25EE9C0400226718 /* XUMO_Programming_HelperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XUMO_Programming_HelperUITests.swift; sourceTree = "<group>"; };
+		F611FADE25EE9C0400226718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F611FAB825EE9C0000226718 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F611FACA25EE9C0400226718 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F611FAD525EE9C0400226718 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F611FAB225EE9C0000226718 = {
+			isa = PBXGroup;
+			children = (
+				F611FABD25EE9C0000226718 /* XUMO Programming Helper */,
+				F611FAD025EE9C0400226718 /* XUMO Programming HelperTests */,
+				F611FADB25EE9C0400226718 /* XUMO Programming HelperUITests */,
+				F611FABC25EE9C0000226718 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F611FABC25EE9C0000226718 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F611FABB25EE9C0000226718 /* XUMO Programming Helper.app */,
+				F611FACD25EE9C0400226718 /* XUMO Programming HelperTests.xctest */,
+				F611FAD825EE9C0400226718 /* XUMO Programming HelperUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F611FABD25EE9C0000226718 /* XUMO Programming Helper */ = {
+			isa = PBXGroup;
+			children = (
+				F611FABE25EE9C0000226718 /* XUMO_Programming_HelperApp.swift */,
+				F611FAC025EE9C0000226718 /* ContentView.swift */,
+				F611FAC225EE9C0300226718 /* Assets.xcassets */,
+				F611FAC725EE9C0300226718 /* Info.plist */,
+				F611FAC825EE9C0300226718 /* XUMO_Programming_Helper.entitlements */,
+				F611FAC425EE9C0300226718 /* Preview Content */,
+			);
+			path = "XUMO Programming Helper";
+			sourceTree = "<group>";
+		};
+		F611FAC425EE9C0300226718 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F611FAC525EE9C0300226718 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F611FAD025EE9C0400226718 /* XUMO Programming HelperTests */ = {
+			isa = PBXGroup;
+			children = (
+				F611FAD125EE9C0400226718 /* XUMO_Programming_HelperTests.swift */,
+				F611FAD325EE9C0400226718 /* Info.plist */,
+			);
+			path = "XUMO Programming HelperTests";
+			sourceTree = "<group>";
+		};
+		F611FADB25EE9C0400226718 /* XUMO Programming HelperUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F611FADC25EE9C0400226718 /* XUMO_Programming_HelperUITests.swift */,
+				F611FADE25EE9C0400226718 /* Info.plist */,
+			);
+			path = "XUMO Programming HelperUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F611FABA25EE9C0000226718 /* XUMO Programming Helper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F611FAE125EE9C0400226718 /* Build configuration list for PBXNativeTarget "XUMO Programming Helper" */;
+			buildPhases = (
+				F611FAB725EE9C0000226718 /* Sources */,
+				F611FAB825EE9C0000226718 /* Frameworks */,
+				F611FAB925EE9C0000226718 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "XUMO Programming Helper";
+			productName = "XUMO Programming Helper";
+			productReference = F611FABB25EE9C0000226718 /* XUMO Programming Helper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F611FACC25EE9C0400226718 /* XUMO Programming HelperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F611FAE425EE9C0400226718 /* Build configuration list for PBXNativeTarget "XUMO Programming HelperTests" */;
+			buildPhases = (
+				F611FAC925EE9C0400226718 /* Sources */,
+				F611FACA25EE9C0400226718 /* Frameworks */,
+				F611FACB25EE9C0400226718 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F611FACF25EE9C0400226718 /* PBXTargetDependency */,
+			);
+			name = "XUMO Programming HelperTests";
+			productName = "XUMO Programming HelperTests";
+			productReference = F611FACD25EE9C0400226718 /* XUMO Programming HelperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F611FAD725EE9C0400226718 /* XUMO Programming HelperUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F611FAE725EE9C0400226718 /* Build configuration list for PBXNativeTarget "XUMO Programming HelperUITests" */;
+			buildPhases = (
+				F611FAD425EE9C0400226718 /* Sources */,
+				F611FAD525EE9C0400226718 /* Frameworks */,
+				F611FAD625EE9C0400226718 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F611FADA25EE9C0400226718 /* PBXTargetDependency */,
+			);
+			name = "XUMO Programming HelperUITests";
+			productName = "XUMO Programming HelperUITests";
+			productReference = F611FAD825EE9C0400226718 /* XUMO Programming HelperUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F611FAB325EE9C0000226718 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					F611FABA25EE9C0000226718 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					F611FACC25EE9C0400226718 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = F611FABA25EE9C0000226718;
+					};
+					F611FAD725EE9C0400226718 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = F611FABA25EE9C0000226718;
+					};
+				};
+			};
+			buildConfigurationList = F611FAB625EE9C0000226718 /* Build configuration list for PBXProject "XUMO Programming Helper" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F611FAB225EE9C0000226718;
+			productRefGroup = F611FABC25EE9C0000226718 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F611FABA25EE9C0000226718 /* XUMO Programming Helper */,
+				F611FACC25EE9C0400226718 /* XUMO Programming HelperTests */,
+				F611FAD725EE9C0400226718 /* XUMO Programming HelperUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F611FAB925EE9C0000226718 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F611FAC625EE9C0300226718 /* Preview Assets.xcassets in Resources */,
+				F611FAC325EE9C0300226718 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F611FACB25EE9C0400226718 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F611FAD625EE9C0400226718 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F611FAB725EE9C0000226718 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F611FAC125EE9C0000226718 /* ContentView.swift in Sources */,
+				F611FABF25EE9C0000226718 /* XUMO_Programming_HelperApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F611FAC925EE9C0400226718 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F611FAD225EE9C0400226718 /* XUMO_Programming_HelperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F611FAD425EE9C0400226718 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F611FADD25EE9C0400226718 /* XUMO_Programming_HelperUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F611FACF25EE9C0400226718 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F611FABA25EE9C0000226718 /* XUMO Programming Helper */;
+			targetProxy = F611FACE25EE9C0400226718 /* PBXContainerItemProxy */;
+		};
+		F611FADA25EE9C0400226718 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F611FABA25EE9C0000226718 /* XUMO Programming Helper */;
+			targetProxy = F611FAD925EE9C0400226718 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F611FADF25EE9C0400226718 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F611FAE025EE9C0400226718 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		F611FAE225EE9C0400226718 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "XUMO Programming Helper/XUMO_Programming_Helper.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"XUMO Programming Helper/Preview Content\"";
+				DEVELOPMENT_TEAM = 5R6CF59GRY;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "XUMO Programming Helper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shneaky.XUMO-Programming-Helper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F611FAE325EE9C0400226718 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "XUMO Programming Helper/XUMO_Programming_Helper.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"XUMO Programming Helper/Preview Content\"";
+				DEVELOPMENT_TEAM = 5R6CF59GRY;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "XUMO Programming Helper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shneaky.XUMO-Programming-Helper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		F611FAE525EE9C0400226718 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5R6CF59GRY;
+				INFOPLIST_FILE = "XUMO Programming HelperTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shneaky.XUMO-Programming-HelperTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XUMO Programming Helper.app/Contents/MacOS/XUMO Programming Helper";
+			};
+			name = Debug;
+		};
+		F611FAE625EE9C0400226718 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5R6CF59GRY;
+				INFOPLIST_FILE = "XUMO Programming HelperTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shneaky.XUMO-Programming-HelperTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XUMO Programming Helper.app/Contents/MacOS/XUMO Programming Helper";
+			};
+			name = Release;
+		};
+		F611FAE825EE9C0400226718 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5R6CF59GRY;
+				INFOPLIST_FILE = "XUMO Programming HelperUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shneaky.XUMO-Programming-HelperUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "XUMO Programming Helper";
+			};
+			name = Debug;
+		};
+		F611FAE925EE9C0400226718 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5R6CF59GRY;
+				INFOPLIST_FILE = "XUMO Programming HelperUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shneaky.XUMO-Programming-HelperUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "XUMO Programming Helper";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F611FAB625EE9C0000226718 /* Build configuration list for PBXProject "XUMO Programming Helper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F611FADF25EE9C0400226718 /* Debug */,
+				F611FAE025EE9C0400226718 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F611FAE125EE9C0400226718 /* Build configuration list for PBXNativeTarget "XUMO Programming Helper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F611FAE225EE9C0400226718 /* Debug */,
+				F611FAE325EE9C0400226718 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F611FAE425EE9C0400226718 /* Build configuration list for PBXNativeTarget "XUMO Programming HelperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F611FAE525EE9C0400226718 /* Debug */,
+				F611FAE625EE9C0400226718 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F611FAE725EE9C0400226718 /* Build configuration list for PBXNativeTarget "XUMO Programming HelperUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F611FAE825EE9C0400226718 /* Debug */,
+				F611FAE925EE9C0400226718 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F611FAB325EE9C0000226718 /* Project object */;
+}
