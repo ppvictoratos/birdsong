@@ -1,0 +1,721 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A2D0BE22B6DFCF200BFB380 /* ModelContainerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D0BE12B6DFCF200BFB380 /* ModelContainerPreview.swift */; };
+		1A2D0BE42B6DFD0900BFB380 /* Preview+ModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D0BE32B6DFD0900BFB380 /* Preview+ModelContainer.swift */; };
+		1A2D0BE72B6DFD5B00BFB380 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A2D0BE62B6DFD5B00BFB380 /* LICENSE.txt */; };
+		1A2D0BEA2B6DFD9400BFB380 /* SampleData+Golfers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D0BE92B6DFD9400BFB380 /* SampleData+Golfers.swift */; };
+		1A2D0BEC2B6DFDAF00BFB380 /* SampleData+Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D0BEB2B6DFDAF00BFB380 /* SampleData+Games.swift */; };
+		1A2D0BEE2B6DFDD800BFB380 /* SampleData+Courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D0BED2B6DFDD800BFB380 /* SampleData+Courses.swift */; };
+		1A2D0BF02B6E210E00BFB380 /* SampleData+Scores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D0BEF2B6E210E00BFB380 /* SampleData+Scores.swift */; };
+		1A2D0BF22B6F2D8400BFB380 /* GolferDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D0BF12B6F2D8400BFB380 /* GolferDetailView.swift */; };
+		1A2D0BF42B6FDACE00BFB380 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D0BF32B6FDACE00BFB380 /* GameView.swift */; };
+		1A60D95A2B7353EB00DB4D75 /* EditGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A60D9592B7353EB00DB4D75 /* EditGameView.swift */; };
+		1AAFD7FC2B65691A00938F9B /* FORE4GLEApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAFD7FB2B65691A00938F9B /* FORE4GLEApp.swift */; };
+		1AAFD7FE2B65691A00938F9B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAFD7FD2B65691A00938F9B /* ContentView.swift */; };
+		1AAFD8022B65691C00938F9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AAFD8012B65691C00938F9B /* Assets.xcassets */; };
+		1AAFD8052B65691C00938F9B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AAFD8042B65691C00938F9B /* Preview Assets.xcassets */; };
+		1AAFD80F2B65691D00938F9B /* FORE4GLETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAFD80E2B65691D00938F9B /* FORE4GLETests.swift */; };
+		1AAFD8192B65691D00938F9B /* FORE4GLEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAFD8182B65691D00938F9B /* FORE4GLEUITests.swift */; };
+		1AAFD81B2B65691D00938F9B /* FORE4GLEUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAFD81A2B65691D00938F9B /* FORE4GLEUITestsLaunchTests.swift */; };
+		1AAFD8282B6569D300938F9B /* Golfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAFD8272B6569D300938F9B /* Golfer.swift */; };
+		1AAFD82A2B656C5800938F9B /* EditGolferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAFD8292B656C5800938F9B /* EditGolferView.swift */; };
+		1AAFD82F2B67803300938F9B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAFD82E2B67803200938F9B /* Course.swift */; };
+		1AAFD8312B6780E500938F9B /* NavigationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAFD8302B6780E500938F9B /* NavigationContext.swift */; };
+		1AAFD8332B68047100938F9B /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAFD8322B68047100938F9B /* Game.swift */; };
+		1AB8528D2B6AC75D005F4E6C /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8528C2B6AC75D005F4E6C /* Score.swift */; };
+		1AC83DA62B70A3FA00574D6D /* GameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC83DA52B70A3FA00574D6D /* GameListView.swift */; };
+		1AC83DA82B727EB300574D6D /* MVPFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC83DA72B727EB300574D6D /* MVPFlowView.swift */; };
+		1AE041CF2B76682800BCF65F /* GolferListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE041CE2B76682800BCF65F /* GolferListView.swift */; };
+		1AE9FBE62B6A0E8C00DFECD0 /* GolfScorecardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE9FBE52B6A0E8C00DFECD0 /* GolfScorecardView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1AAFD80B2B65691D00938F9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1AAFD7F02B65691A00938F9B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1AAFD7F72B65691A00938F9B;
+			remoteInfo = FORE4GLE;
+		};
+		1AAFD8152B65691D00938F9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1AAFD7F02B65691A00938F9B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1AAFD7F72B65691A00938F9B;
+			remoteInfo = FORE4GLE;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1A2D0BE12B6DFCF200BFB380 /* ModelContainerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelContainerPreview.swift; sourceTree = "<group>"; };
+		1A2D0BE32B6DFD0900BFB380 /* Preview+ModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+ModelContainer.swift"; sourceTree = "<group>"; };
+		1A2D0BE62B6DFD5B00BFB380 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		1A2D0BE92B6DFD9400BFB380 /* SampleData+Golfers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SampleData+Golfers.swift"; sourceTree = "<group>"; };
+		1A2D0BEB2B6DFDAF00BFB380 /* SampleData+Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SampleData+Games.swift"; sourceTree = "<group>"; };
+		1A2D0BED2B6DFDD800BFB380 /* SampleData+Courses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SampleData+Courses.swift"; sourceTree = "<group>"; };
+		1A2D0BEF2B6E210E00BFB380 /* SampleData+Scores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SampleData+Scores.swift"; sourceTree = "<group>"; };
+		1A2D0BF12B6F2D8400BFB380 /* GolferDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GolferDetailView.swift; sourceTree = "<group>"; };
+		1A2D0BF32B6FDACE00BFB380 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		1A60D9592B7353EB00DB4D75 /* EditGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGameView.swift; sourceTree = "<group>"; };
+		1AAFD7F82B65691A00938F9B /* FORE4GLE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FORE4GLE.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AAFD7FB2B65691A00938F9B /* FORE4GLEApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FORE4GLEApp.swift; sourceTree = "<group>"; };
+		1AAFD7FD2B65691A00938F9B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1AAFD8012B65691C00938F9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1AAFD8042B65691C00938F9B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1AAFD80A2B65691D00938F9B /* FORE4GLETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FORE4GLETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AAFD80E2B65691D00938F9B /* FORE4GLETests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FORE4GLETests.swift; sourceTree = "<group>"; };
+		1AAFD8142B65691D00938F9B /* FORE4GLEUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FORE4GLEUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AAFD8182B65691D00938F9B /* FORE4GLEUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FORE4GLEUITests.swift; sourceTree = "<group>"; };
+		1AAFD81A2B65691D00938F9B /* FORE4GLEUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FORE4GLEUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1AAFD8272B6569D300938F9B /* Golfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Golfer.swift; sourceTree = "<group>"; };
+		1AAFD8292B656C5800938F9B /* EditGolferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGolferView.swift; sourceTree = "<group>"; };
+		1AAFD82E2B67803200938F9B /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		1AAFD8302B6780E500938F9B /* NavigationContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationContext.swift; sourceTree = "<group>"; };
+		1AAFD8322B68047100938F9B /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		1AB8528C2B6AC75D005F4E6C /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		1AC83DA52B70A3FA00574D6D /* GameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListView.swift; sourceTree = "<group>"; };
+		1AC83DA72B727EB300574D6D /* MVPFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPFlowView.swift; sourceTree = "<group>"; };
+		1AE041CE2B76682800BCF65F /* GolferListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GolferListView.swift; sourceTree = "<group>"; };
+		1AE9FBE52B6A0E8C00DFECD0 /* GolfScorecardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GolfScorecardView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1AAFD7F52B65691A00938F9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AAFD8072B65691D00938F9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AAFD8112B65691D00938F9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A2D0BE02B6DFCCD00BFB380 /* PreviewHelper */ = {
+			isa = PBXGroup;
+			children = (
+				1A2D0BE12B6DFCF200BFB380 /* ModelContainerPreview.swift */,
+				1A2D0BE32B6DFD0900BFB380 /* Preview+ModelContainer.swift */,
+			);
+			path = PreviewHelper;
+			sourceTree = "<group>";
+		};
+		1A2D0BE52B6DFD5B00BFB380 /* LICENSE */ = {
+			isa = PBXGroup;
+			children = (
+				1A2D0BE62B6DFD5B00BFB380 /* LICENSE.txt */,
+			);
+			path = LICENSE;
+			sourceTree = "<group>";
+		};
+		1A2D0BE82B6DFD6B00BFB380 /* Sample Data */ = {
+			isa = PBXGroup;
+			children = (
+				1A2D0BEB2B6DFDAF00BFB380 /* SampleData+Games.swift */,
+				1A2D0BE92B6DFD9400BFB380 /* SampleData+Golfers.swift */,
+				1A2D0BEF2B6E210E00BFB380 /* SampleData+Scores.swift */,
+				1A2D0BED2B6DFDD800BFB380 /* SampleData+Courses.swift */,
+			);
+			path = "Sample Data";
+			sourceTree = "<group>";
+		};
+		1A60D95B2B73540D00DB4D75 /* TODOS */ = {
+			isa = PBXGroup;
+			children = (
+				1AAFD8292B656C5800938F9B /* EditGolferView.swift */,
+				1A60D9592B7353EB00DB4D75 /* EditGameView.swift */,
+			);
+			path = TODOS;
+			sourceTree = "<group>";
+		};
+		1AAFD7EF2B65691A00938F9B = {
+			isa = PBXGroup;
+			children = (
+				1AAFD7FA2B65691A00938F9B /* FORE4GLE */,
+				1AAFD80D2B65691D00938F9B /* FORE4GLETests */,
+				1AAFD8172B65691D00938F9B /* FORE4GLEUITests */,
+				1A2D0BE52B6DFD5B00BFB380 /* LICENSE */,
+				1AAFD7F92B65691A00938F9B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1AAFD7F92B65691A00938F9B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1AAFD7F82B65691A00938F9B /* FORE4GLE.app */,
+				1AAFD80A2B65691D00938F9B /* FORE4GLETests.xctest */,
+				1AAFD8142B65691D00938F9B /* FORE4GLEUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1AAFD7FA2B65691A00938F9B /* FORE4GLE */ = {
+			isa = PBXGroup;
+			children = (
+				1AAFD7FB2B65691A00938F9B /* FORE4GLEApp.swift */,
+				1AAFD82D2B677FFB00938F9B /* Models */,
+				1AAFD8342B68088800938F9B /* Views */,
+				1A2D0BE02B6DFCCD00BFB380 /* PreviewHelper */,
+				1A2D0BE82B6DFD6B00BFB380 /* Sample Data */,
+				1AAFD8012B65691C00938F9B /* Assets.xcassets */,
+				1AAFD8032B65691C00938F9B /* Preview Content */,
+			);
+			path = FORE4GLE;
+			sourceTree = "<group>";
+		};
+		1AAFD8032B65691C00938F9B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1AAFD8042B65691C00938F9B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1AAFD80D2B65691D00938F9B /* FORE4GLETests */ = {
+			isa = PBXGroup;
+			children = (
+				1AAFD80E2B65691D00938F9B /* FORE4GLETests.swift */,
+			);
+			path = FORE4GLETests;
+			sourceTree = "<group>";
+		};
+		1AAFD8172B65691D00938F9B /* FORE4GLEUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1AAFD8182B65691D00938F9B /* FORE4GLEUITests.swift */,
+				1AAFD81A2B65691D00938F9B /* FORE4GLEUITestsLaunchTests.swift */,
+			);
+			path = FORE4GLEUITests;
+			sourceTree = "<group>";
+		};
+		1AAFD82D2B677FFB00938F9B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1AAFD8272B6569D300938F9B /* Golfer.swift */,
+				1AAFD8322B68047100938F9B /* Game.swift */,
+				1AAFD82E2B67803200938F9B /* Course.swift */,
+				1AB8528C2B6AC75D005F4E6C /* Score.swift */,
+				1AAFD8302B6780E500938F9B /* NavigationContext.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1AAFD8342B68088800938F9B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1AAFD7FD2B65691A00938F9B /* ContentView.swift */,
+				1AC83DA72B727EB300574D6D /* MVPFlowView.swift */,
+				1AC83DA52B70A3FA00574D6D /* GameListView.swift */,
+				1A2D0BF32B6FDACE00BFB380 /* GameView.swift */,
+				1AE041CE2B76682800BCF65F /* GolferListView.swift */,
+				1A2D0BF12B6F2D8400BFB380 /* GolferDetailView.swift */,
+				1AE9FBE52B6A0E8C00DFECD0 /* GolfScorecardView.swift */,
+				1A60D95B2B73540D00DB4D75 /* TODOS */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1AAFD7F72B65691A00938F9B /* FORE4GLE */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AAFD81E2B65691D00938F9B /* Build configuration list for PBXNativeTarget "FORE4GLE" */;
+			buildPhases = (
+				1AAFD7F42B65691A00938F9B /* Sources */,
+				1AAFD7F52B65691A00938F9B /* Frameworks */,
+				1AAFD7F62B65691A00938F9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FORE4GLE;
+			productName = FORE4GLE;
+			productReference = 1AAFD7F82B65691A00938F9B /* FORE4GLE.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1AAFD8092B65691D00938F9B /* FORE4GLETests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AAFD8212B65691D00938F9B /* Build configuration list for PBXNativeTarget "FORE4GLETests" */;
+			buildPhases = (
+				1AAFD8062B65691D00938F9B /* Sources */,
+				1AAFD8072B65691D00938F9B /* Frameworks */,
+				1AAFD8082B65691D00938F9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1AAFD80C2B65691D00938F9B /* PBXTargetDependency */,
+			);
+			name = FORE4GLETests;
+			productName = FORE4GLETests;
+			productReference = 1AAFD80A2B65691D00938F9B /* FORE4GLETests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1AAFD8132B65691D00938F9B /* FORE4GLEUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AAFD8242B65691D00938F9B /* Build configuration list for PBXNativeTarget "FORE4GLEUITests" */;
+			buildPhases = (
+				1AAFD8102B65691D00938F9B /* Sources */,
+				1AAFD8112B65691D00938F9B /* Frameworks */,
+				1AAFD8122B65691D00938F9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1AAFD8162B65691D00938F9B /* PBXTargetDependency */,
+			);
+			name = FORE4GLEUITests;
+			productName = FORE4GLEUITests;
+			productReference = 1AAFD8142B65691D00938F9B /* FORE4GLEUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1AAFD7F02B65691A00938F9B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					1AAFD7F72B65691A00938F9B = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					1AAFD8092B65691D00938F9B = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 1AAFD7F72B65691A00938F9B;
+					};
+					1AAFD8132B65691D00938F9B = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 1AAFD7F72B65691A00938F9B;
+					};
+				};
+			};
+			buildConfigurationList = 1AAFD7F32B65691A00938F9B /* Build configuration list for PBXProject "FORE4GLE" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1AAFD7EF2B65691A00938F9B;
+			productRefGroup = 1AAFD7F92B65691A00938F9B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1AAFD7F72B65691A00938F9B /* FORE4GLE */,
+				1AAFD8092B65691D00938F9B /* FORE4GLETests */,
+				1AAFD8132B65691D00938F9B /* FORE4GLEUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1AAFD7F62B65691A00938F9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A2D0BE72B6DFD5B00BFB380 /* LICENSE.txt in Resources */,
+				1AAFD8052B65691C00938F9B /* Preview Assets.xcassets in Resources */,
+				1AAFD8022B65691C00938F9B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AAFD8082B65691D00938F9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AAFD8122B65691D00938F9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1AAFD7F42B65691A00938F9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AAFD7FE2B65691A00938F9B /* ContentView.swift in Sources */,
+				1AE9FBE62B6A0E8C00DFECD0 /* GolfScorecardView.swift in Sources */,
+				1A2D0BEC2B6DFDAF00BFB380 /* SampleData+Games.swift in Sources */,
+				1AAFD8332B68047100938F9B /* Game.swift in Sources */,
+				1A2D0BF42B6FDACE00BFB380 /* GameView.swift in Sources */,
+				1AAFD82F2B67803300938F9B /* Course.swift in Sources */,
+				1AAFD8282B6569D300938F9B /* Golfer.swift in Sources */,
+				1AAFD82A2B656C5800938F9B /* EditGolferView.swift in Sources */,
+				1A60D95A2B7353EB00DB4D75 /* EditGameView.swift in Sources */,
+				1AAFD7FC2B65691A00938F9B /* FORE4GLEApp.swift in Sources */,
+				1AC83DA62B70A3FA00574D6D /* GameListView.swift in Sources */,
+				1A2D0BF02B6E210E00BFB380 /* SampleData+Scores.swift in Sources */,
+				1A2D0BF22B6F2D8400BFB380 /* GolferDetailView.swift in Sources */,
+				1A2D0BE42B6DFD0900BFB380 /* Preview+ModelContainer.swift in Sources */,
+				1AC83DA82B727EB300574D6D /* MVPFlowView.swift in Sources */,
+				1A2D0BE22B6DFCF200BFB380 /* ModelContainerPreview.swift in Sources */,
+				1A2D0BEA2B6DFD9400BFB380 /* SampleData+Golfers.swift in Sources */,
+				1AE041CF2B76682800BCF65F /* GolferListView.swift in Sources */,
+				1A2D0BEE2B6DFDD800BFB380 /* SampleData+Courses.swift in Sources */,
+				1AB8528D2B6AC75D005F4E6C /* Score.swift in Sources */,
+				1AAFD8312B6780E500938F9B /* NavigationContext.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AAFD8062B65691D00938F9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AAFD80F2B65691D00938F9B /* FORE4GLETests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AAFD8102B65691D00938F9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AAFD81B2B65691D00938F9B /* FORE4GLEUITestsLaunchTests.swift in Sources */,
+				1AAFD8192B65691D00938F9B /* FORE4GLEUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1AAFD80C2B65691D00938F9B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1AAFD7F72B65691A00938F9B /* FORE4GLE */;
+			targetProxy = 1AAFD80B2B65691D00938F9B /* PBXContainerItemProxy */;
+		};
+		1AAFD8162B65691D00938F9B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1AAFD7F72B65691A00938F9B /* FORE4GLE */;
+			targetProxy = 1AAFD8152B65691D00938F9B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1AAFD81C2B65691D00938F9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1AAFD81D2B65691D00938F9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1AAFD81F2B65691D00938F9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FORE4GLE/Preview Content\"";
+				DEVELOPMENT_TEAM = 5R6CF59GRY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.portokali.FORE4GLE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1AAFD8202B65691D00938F9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FORE4GLE/Preview Content\"";
+				DEVELOPMENT_TEAM = 5R6CF59GRY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.portokali.FORE4GLE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1AAFD8222B65691D00938F9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5R6CF59GRY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.portokali.FORE4GLETests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FORE4GLE.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FORE4GLE";
+			};
+			name = Debug;
+		};
+		1AAFD8232B65691D00938F9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5R6CF59GRY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.portokali.FORE4GLETests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FORE4GLE.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FORE4GLE";
+			};
+			name = Release;
+		};
+		1AAFD8252B65691D00938F9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5R6CF59GRY;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.portokali.FORE4GLEUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FORE4GLE;
+			};
+			name = Debug;
+		};
+		1AAFD8262B65691D00938F9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5R6CF59GRY;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.portokali.FORE4GLEUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FORE4GLE;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1AAFD7F32B65691A00938F9B /* Build configuration list for PBXProject "FORE4GLE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AAFD81C2B65691D00938F9B /* Debug */,
+				1AAFD81D2B65691D00938F9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AAFD81E2B65691D00938F9B /* Build configuration list for PBXNativeTarget "FORE4GLE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AAFD81F2B65691D00938F9B /* Debug */,
+				1AAFD8202B65691D00938F9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AAFD8212B65691D00938F9B /* Build configuration list for PBXNativeTarget "FORE4GLETests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AAFD8222B65691D00938F9B /* Debug */,
+				1AAFD8232B65691D00938F9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AAFD8242B65691D00938F9B /* Build configuration list for PBXNativeTarget "FORE4GLEUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AAFD8252B65691D00938F9B /* Debug */,
+				1AAFD8262B65691D00938F9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1AAFD7F02B65691A00938F9B /* Project object */;
+}
