@@ -1,0 +1,30 @@
+-- please shake three coins in your hand and let them fall
+
+-- *loading animation*
+
+-- once you see their faces, use 2 to mark TAILS
+			     use 3 to mark HEADS
+
+-- backspace works, you can also type THT HHT THT, etc.
+-- press c to cancel 
+-- press r to retry
+-- press ENTER to continue
+
+-- the numbers and 232 letter combos will be shown as the user completes this 6 times
+
+-- once done, the lines are drawn out and a pretty picture is drawn of the passage (make ur own ascii ?)
+
+             o\
+   _________/__\__________
+  |                  - (  |
+ ,'-.                 . `-|
+(____".       ,-.    '   ||
+  |          /\,-\   ,-.  |
+  |      ,-./     \ /'.-\ |
+  |     /-.,\      /     \|
+  |    /     \    ,-.     \
+  |___/_______\__/___\_____\
+
+MOUNTAIN
+
+-- soundscape, emphasis on user using app as a guide to reflect in person
