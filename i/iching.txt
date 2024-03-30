@@ -1,0 +1,37 @@
+Iching
+Who is my user? Of iChing?
+Someone who is a thinker, maybe into Rick Rubin, Likes the simple things, me. someone who would use the phone as 
+a guide to then journal after
+
+What steps will they take to do what they need?
+If they are feeling indecisive or need clarity, open the app. it tells you to breathe (optional breathing 
+exercise), and it just shows the coins. maybe it shows the last time, which you can click into, it has a note 
+section but default text is: we encourage you write in a paper journal! we love trees, but it's better for you", 
+coins get added to a cup, cup is shaken, animation rolling, keeps track of what you got, lets you fast forward 
+but its mostly about the dice. then afterwards you have some cool art and a blurb about each item..
+
+seems like i'd need permission to transcribe the book. make sense to do that first i guess.. or i can do 
+something around that.. maybe we simplify. all coins flip at once, we do short blurbs based upon book, credit it 
+in credits. this app needs music.
+
+user is able to quickly toggle dots heads or tails to input real time coin flipping. or you can hit a flip me 
+button
+
+importing TODOS
+//TODO: Make each coin flip draw the corresponding hexagram line
+//TODO: How to make it wrap at 9 dots?
+
+//TODO: Implement TCA
+
+//TODO: Make flip button increment the amount of FlipResults until there are 9
+    //TODO: Change button to "View Hexagram"
+    //TODO: Show hexagram based upon flip results
+    //TODO: Change button to say
+
+//TODO: Make CoinFlip a 3D object that the user can interact with
+    //TODO: Once flipped, it becomes three separate coins
+//TODO: Make the result of coin flip update the CoinFlipResults
+
+//TODO: Make CoinFlipResult an H or T depending on flip
+    //return an array of strings? map could be useful here
+
