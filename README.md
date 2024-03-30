@@ -20,7 +20,7 @@ looking to develop the following projects:
 
 - iChing
 - 1twothree
-- A2NiNG4K
+- 2NiNG
 - 3Strikes
 - FORE4GLE
 - 5..?
@@ -30,19 +30,20 @@ looking to develop the following projects:
 - 9MUSES
 - Tenp0
 
-**20 min a day/every day, in ascending numeric order. all in github.**
+**20 min a day/every day, all in github.**
 
-*Deadlines as followed:*
-0. Might be a while
-1. Quick Follw Up
-2. IDK
-3. June
-4. ASAP
+Originally, I was going to overwhelm myself and make all of these iOS projects. After finding  a version of the iChing written in Go.. I have decided against just using Swift.
+
+*Deadlines/20 Min Tracking*
+0. 4/1/2024 **
+1. Mr. Lahey needs to approve
+2. 5/20 ? This one could be done quickly if stripped back
+3. 6/1/2024 for 6ers
+4. DUE ASAP, "Golfer" Pete!
 5. ?
 6. ?
-7. ?
-8. ?
-9. 11/29/2025 (610 days from start)
+7. ? (due before 8..)
+8. ? (due before 9)
+9. DUE 11/29/2025 (610 days from start)
 10. Anytime after that
 
-If I do it this way, I have 20 man hours per project, minimum.
