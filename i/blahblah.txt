@@ -6,8 +6,33 @@ toss the coins. then it shows an ascii picture and the passage. don't worry abou
 turning numbers or whatever. here's what you need to do:
 
 1. Gather info from Wikipedia for documentation and iChing data set
-2. Write up the prompt : expected response restraints (only H or T, 6 of them)
+2. Write up the prompt : expected response restraints (only h or t, 6 of them)
 3. Using the book, create the 6? elemental thingies using ASCII art
-4. Format the final repsonse message
-5. Write out the prompt wheel
+4. Format the final repsonse message to be pretty
+5. Write out the prompt wheel and test the shit out of it
+
+Req:
+
+This is an example of one:
+THTHHT
+
+This is an example of not one:
+WEINER
+
+Step 1 |
+https://en.wikipedia.org/wiki/I_Ching
+
+The iChing was a divination tool used back in ancient China. There is an English-translated book by Brian Browne Walker which utilizes 3 coins as the sortition method. As this activity
+does require some reflection and journaling, I believe being in the control of the coins
+can empower one to take the words and turn them into actions that can really make a change.
+
+64 hexagrams, I have the book with the passages, or i can scrape from da web
+
+2...?
+
+What if I made this data entry?
+I allow myself to run this script, and enter my coin results. once done it says
+"What hexagram number?"
+"What hexagram name?"
+"Explain the jist of it"
 
