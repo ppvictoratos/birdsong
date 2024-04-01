@@ -1,0 +1,13 @@
+blahblah.txt
+
+what i want to do to accomplish making the "iching" as soon as possible is two things.
+Set a goal to create a python-written linux script that allows you to HTHTHH each time you
+toss the coins. then it shows an ascii picture and the passage. don't worry about the 
+turning numbers or whatever. here's what you need to do:
+
+1. Gather info from Wikipedia for documentation and iChing data set
+2. Write up the prompt : expected response restraints (only H or T, 6 of them)
+3. Using the book, create the 6? elemental thingies using ASCII art
+4. Format the final repsonse message
+5. Write out the prompt wheel
+
