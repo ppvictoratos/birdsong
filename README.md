@@ -1,22 +1,6 @@
 # birdsong
  *tweet tweet*
 
---- bird with hat
-    ________
-    |      |
-   [________]
-   /  o _ o \
-   (    \/  )
-  )          (
-(    -  -  -  )
-(             )
- (            )
-  [          ]
----/l\    /l\--------
-  ----------------
-     (  )
-    ( __ _)
-
 looking to develop the following projects:
 
 - iChing
