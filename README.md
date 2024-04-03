@@ -1,21 +1,6 @@
 # birdsong
  *tweet tweet*
 
----
-      _...._
-    /       \
-   /  o _ o
-   (    \/  )
-  )          (
-(    -  -  -  )
-(             )
- (            )
-  [          ]
----/l\    /l\--------
-  ----------------
-     (  )
-    ( __ _)
-
 looking to develop the following projects:
 
 - iChing
