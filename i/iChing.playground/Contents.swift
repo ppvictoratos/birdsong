@@ -6,9 +6,9 @@ import Foundation
 import PlaygroundSupport
 
 class Hexagram {
-    var id: Int = 0
-    var title: String = "Hexagrams"
-    var passage: String = "iChing Divinations"    
+    var id: Int = 15
+    var title: String = "Modesty"
+    var passage: String = "The Creative acts to empty what is full and to offer abundance to what is modest."
 }
 
 class HexagramSetupTest: XCTestCase {
