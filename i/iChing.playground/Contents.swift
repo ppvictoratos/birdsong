@@ -1,11 +1,12 @@
 //: A UIKit based Playground for presenting user interface
   
+import SwiftUI
 import UIKit
 import XCTest
 import Foundation
 import PlaygroundSupport
 
-class Hexagram {
+struct HexagramCard {
     var id: Int = 15
     var title: String = "Modesty"
     var passage: String = "The Creative acts to empty what is full and to offer abundance to what is modest."
