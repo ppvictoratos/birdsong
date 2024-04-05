@@ -27,7 +27,6 @@ let sampleData: [Hexagram] = [
 struct HexagramCard: View {
     var hexagram: Hexagram
     
-    //todo: make this into a card
     var body: some View {
         ZStack{
             Text(hexagram.hexagram)
@@ -47,5 +46,3 @@ struct HexagramCard: View {
 let testHex = HexagramCard(hexagram: sampleData[1])
 PlaygroundPage.current.setLiveView(testHex)
 
-
-//what kind of tests can i have?
