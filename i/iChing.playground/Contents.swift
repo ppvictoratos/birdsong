@@ -1,5 +1,4 @@
 import SwiftUI
-import UIKit
 import XCTest
 import Foundation
 import PlaygroundSupport
@@ -33,7 +32,7 @@ struct HexagramCard: View {
         ZStack{
             Text(hexagram.hexagram)
                 .font(.system(size: 175))
-                .opacity(0.3)
+                .opacity(0.2)
             VStack{
                 Text(hexagram.hanzi)
                     .font(.largeTitle)
@@ -45,8 +44,8 @@ struct HexagramCard: View {
     }
 }
 
-let hostingVC = UIHostingController(rootView: HexagramCard(hexagram: sampleData[1]))
-PlaygroundPage.current.liveView = hostingVC
+let testHex = HexagramCard(hexagram: sampleData[1])
+PlaygroundPage.current.setLiveView(testHex)
 
 
 //what kind of tests can i have?
