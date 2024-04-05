@@ -6,34 +6,35 @@ import XCTest
 import Foundation
 import PlaygroundSupport
 
-struct HexagramCard {
-    var id: Int = 15
-    var title: String = "Modesty"
-    var passage: String = "The Creative acts to empty what is full and to offer abundance to what is modest."
+struct Hexagram {
+    var id: Int
+    var title: String
+    var hanzi: String
+    var passage: String
 }
 
-class HexagramSetupTest: XCTestCase {
-    var hexagram: Hexagram!
+let sampleData: [Hexagram] = [
+    Hexagram(id: 15,
+             title: "Modesty",
+             hanzi: "謙",
+             passage: "The Creative acts to empty what is full and to offer abundance to what is modest."),
+    Hexagram(id: 27,
+             title: "Corners of the Mouth",
+             hanzi: "頤",
+             passage: "How you nourish your body is no different from how you are organizing your experiences.")
+]
+
+struct HexagramCard: View {
+    var hexagram: Hexagram
     
-    override func setUp() {
-        super.setUp()
-        hexagram = Hexagram()
+    //todo: make this into a card
+    var body: some View {
+        Text(hexagram.title)
     }
 }
 
-class MyViewController : UIViewController {
-    override func loadView() {
-        let view = UIView()
-        view.backgroundColor = .white
+let hostingVC = UIHostingController(rootView: HexagramCard(hexagram: sampleData[1]))
+PlaygroundPage.current.liveView = hostingVC
 
-        let label = UILabel()
-        label.frame = CGRect(x: 150, y: 200, width: 200, height: 20)
-        label.text = "Hello World!"
-        label.textColor = .black
-        
-        view.addSubview(label)
-        self.view = view
-    }
-}
-// Present the view controller in the Live View window
-PlaygroundPage.current.liveView = MyViewController()
+
+//what kind of tests can i have?
