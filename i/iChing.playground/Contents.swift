@@ -29,20 +29,28 @@ struct HexagramCard: View {
     
     var body: some View {
         ZStack{
+            Color(red: 0.8, green: 0.7, blue: 0.4)
             Text(hexagram.hexagram)
                 .font(.system(size: 175))
-                .opacity(0.2)
+                .opacity(0.1)
             VStack{
                 Text(hexagram.hanzi)
                     .font(.largeTitle)
                     .bold()
+                    .foregroundStyle(.bar)
                 Text(hexagram.title)
                     .bold()
+                Text(hexagram.passage)
+                    .font(.footnote)
+                    .bold()
+                    .multilineTextAlignment(.center)
             }
-        }.frame(width: 150, height: 150)
+        }.frame(width: 150, height: 200)
     }
 }
 
+///PREVIEWS
+///
+//Hexagram Card
 let testHex = HexagramCard(hexagram: sampleData[1])
 PlaygroundPage.current.setLiveView(testHex)
-
