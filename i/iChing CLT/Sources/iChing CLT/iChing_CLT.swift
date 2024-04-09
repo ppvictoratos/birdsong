@@ -7,11 +7,15 @@
 // Used the following tutorial:
 // https://www.swiftbysundell.com/articles/building-a-command-line-tool-using-the-swift-package-manager/
 
+import Figlet
 import ArgumentParser
 
 @main
-struct iChing_CLT: ParsableCommand {    
-    mutating func run() throws {
-        print("hello, world!")
+struct FigletTool: ParsableCommand {
+    @Option(help: "Specify the input")
+    public var input: String
+    
+    public func run() throws {
+        Figlet.say(input)
     }
 }
