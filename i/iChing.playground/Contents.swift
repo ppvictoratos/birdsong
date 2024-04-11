@@ -3,6 +3,7 @@ import XCTest
 import Foundation
 import PlaygroundSupport
 
+
 struct Hexagram {
     var id: Int
     var title: String
