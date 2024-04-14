@@ -12,9 +12,12 @@ import Figlet
 import ArgumentParser
 
 @main
-struct FigletTool: ParsableCommand {
+struct iChing: ParsableCommand {
     @Option(help: "What sequence of coin faces did you get?")
     public var input: String
+    
+    //I need this function to be able to take user input and return a hexagram
+    //
     
     public func run() throws {
         var sequences = [String]()
