@@ -17,7 +17,8 @@ struct iChing: ParsableCommand {
     public var input: String
     
     //I need this function to be able to take user input and return a hexagram
-    //
+    //I first want to build it with some loops, then i'd like to make it functional
+    //Then I will make the ASCII art pretty :)
     
     public func run() throws {
         var sequences = [String]()
